@@ -1,0 +1,186 @@
+#assign_fac_bg {
+    /* position: absolute; */
+    height: 100vh;
+    width:68vw;
+    margin-left: 24vw;
+   margin-top: 13vh;
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1234;
+}
+
+#assign_fac_heading_box {
+    position: absolute;
+    width: 46vw;
+    height: 7vh;
+    left: 25vw;
+    top: 20vh;
+    background: #6C63FF;
+    border-radius: 8px;
+}
+
+#assign_time_heading_box {
+    position: absolute;
+    width: 46vw;
+    height: 7vh;
+    left: 25vw;
+    top: 60vh;
+
+    background: #6C63FF;
+    border-radius: 8px;
+}
+
+#assign_fac_heading {
+    position: absolute;
+    width: 20vw;
+    height: 3vh;
+    left: 17vw;
+    top: 2vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 22px;
+    /* identical to box height */
+    background: none;
+
+    color: #FFFFFF;
+}
+
+#dropdownDept{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    top: 29vh;
+    left:25.5vw;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+#assign_time_heading {
+    position: absolute;
+    width: 20vw;
+    height: 3vh;
+    left: 17vw;
+    top: 2vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 22px;
+    /* identical to box height */
+    background: none;
+
+    color: #FFFFFF;
+}
+#class-id{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 22px;
+    color:black;
+    /* identical to box height */
+    background: none;
+position:absolute;
+top:36.5vh;
+left:25.5vw;
+}
+#dropdownClass{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10vw;
+    height: 4vh;
+    top: 36vh;
+    left:31.5vw;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+#assign_subject{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 22px;
+    color:black;
+    /* identical to box height */
+    background: none;
+position:absolute;
+top:43.5vh;
+left:25.5vw;
+}
+#dropdownSubject{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10vw;
+    height: 4vh;
+    top: 43vh;
+    left:31.5vw;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+#assign_faculty{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 22px;
+    color:black;
+    /* identical to box height */
+    background: none;
+position:absolute;
+top:50.4vh;
+left:25.5vw;
+}
+#dropdownFaculty{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10vw;
+    height: 4vh;
+    top: 50vh;
+    left:31.5vw;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+#add_fac{
+    box-sizing: border-box;
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    top: 29vh;
+    left:61vw;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    padding-top: 0.5vh;
+}
+#time-day-row{
+    position: absolute;
+    width: 20vw;
+    height: 3vh;
+    left: 17vw;
+    top: 2vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 22px;
+    /* identical to box height */
+    background: none;
+}
+#row-time{
+    position:absolute;
+    top:20vh;
+}

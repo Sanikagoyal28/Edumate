@@ -1,0 +1,214 @@
+.updateHeading{
+    position: absolute;
+    left: 25vw;
+    top: 15vh;
+    width: 50vw;
+    height: 5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 37px;
+    background: none;
+}
+.updateWhiteDiv {
+    background-color: #ffffff;
+    position:absolute;
+    box-sizing:border-box;
+    width: 67vw;
+height: fit-content;
+/* left: 27vw; */
+/* top: 26vh; */
+border-radius: 15px;
+z-index:5;
+}
+.updateDivBlock{
+    background-color: #ffffff;
+    margin-left:25vw;
+    margin-top: 23vh;
+    top:26vh;
+    border-radius: 15px;
+z-index:5;
+    /* position:absolute; */
+    box-sizing:border-box;
+    width: 67vw;
+    padding-top:5vh;
+height: fit-content;
+}
+.stUpdRowS{
+    width: 63vw;
+height: 10vh;
+background: #6C63FF;
+border-radius: 8px;
+text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 37px;
+color: #FFFFFF;
+padding-top:2vh;
+z-index:20;
+margin-top:-2vh;
+margin-left:2vw;
+}
+.updateGreyRow{
+    position: absolute;
+width: 63vw;
+height: 10vh;
+left: 2vw;
+top: 3.5vh;
+background: #6C63FF;
+border-radius: 8px;
+text-align: center;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 37px;
+color: #FFFFFF;
+padding-top:2vh;
+z-index:20;
+}
+#updateImage{
+    position:absolute;
+    left:50vw;
+    top:50vh;
+    background: none;
+    display:none;
+}
+#imageDiv{
+    height:fit-content;
+}
+.SUpdateCardCall{
+    display:flex;
+    flex-direction: column;
+    background: none;
+    margin-top:5vh;
+}
+.updateCardRowSt{
+    margin-left:2vw;
+    width: 63vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    background:none;
+    /* background-color: rgb(226, 132, 132); */
+    background-color: rgba(238, 241, 255, 0.5);
+    margin-bottom: 4vh;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    background:none;
+}
+
+@media (min-width:340px) and (max-width:920px) {
+    .updateGreyRow{
+        display: none;
+    }
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
+    }
+    .update{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:20vh;
+    }
+    .updateHead2{
+        position:absolute;
+        top:4vh;
+        left:27vw;
+        font-size: 1.6rem;
+    }
+    #updateImage {
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
+    }
+}
+@media (min-width:390px) and (max-width:950px) {
+    .update{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7.5vw;
+        top:21vh;
+    }
+    .updateHead2{
+        top:3vh;
+        left:28vw;
+    }
+}
+@media (min-width:768px) and (max-width:912px) {
+    .update{
+        font-size: 2.3rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:21vh;
+    }
+    .updateHead2{
+        top:4vh;
+        font-size: 2.2rem;
+        left:34vw;
+    }
+}
+@media (max-width:540px) and (min-width:540px) {
+    .update {
+        top:20vh;
+    }
+    .updateHead2{
+        left:34.5vw;
+    }
+}
+@media (min-width:280px) and (max-width:280px) {
+    .updateGreyRow{
+        display: none;
+    }
+    .updateWhiteDiv{
+        left:7vw;
+        width:86vw;
+        height:70vh;
+    }
+    .update{
+        font-size: 1.35rem;
+        width:90vw;
+        position:absolute;
+        left:8vw;
+        top:20vh;
+    }
+    .updateHead2{
+        position:absolute;
+        top:3vh;
+        left:23vw;
+        font-size: 1.6rem;
+    }
+    #updateImage {
+        top:15vh;
+        left:20vw;
+        width:45vw;
+        height:42vh;
+    }
+}

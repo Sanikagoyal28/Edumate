@@ -1,0 +1,286 @@
+.TIMETABLE {
+    overflow-x:scroll;
+   
+}
+.StudentTimeTable{
+    height:900px;
+}
+
+.timeTable {
+    background-color: #ffffff;
+    position:absolute;
+    width: 72vw;
+height: 125vh;
+left: 23vw;
+top: 18vh;
+border-radius: 15px;
+}
+.dbTT {
+    position: absolute;
+width: 40vw;
+height: 5vh;
+left: 23.5vw;
+top: 11vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 37px;
+background: none;
+}
+.tableNew {
+    width:70vw;
+    margin-left: 1vw;
+    margin-top: 1.5vh;;
+}
+.tableNew td {
+    height:7vh;
+    /* width:5vw; */
+    text-align: center;
+    border:1px solid white;
+    /* padding: 0 10px; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+}
+.timetableRow {
+    background: #6C63FF;
+border: 1px solid #FFFFFF;
+color:white;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 30px;
+width:50vw;
+}
+.days{
+    background: #6C63FF;
+    color:white;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 22px;
+line-height: 30px;
+}
+.lunch ,
+.break {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 22px;
+    height:4.5vh;
+}
+.time {
+    box-sizing: border-box;
+background: #D9D9D9;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+width:7vw;
+}
+.subject {
+    background: none;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #6C63FF;
+position:absolute;
+left:2vw;
+top:78vh;
+background:none;
+
+}
+.faculty {
+    background: none;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #6C63FF;
+position:absolute;
+left:28vw;
+top:78vh;
+background:none;
+}
+.subList {
+    position:absolute;
+    top:85vh;
+    left:0vw;
+    list-style: none;
+    background:none;
+    /* background-colorrgb(13, 11, 11)fff; */
+}
+.subList li {
+    background-color:  #ffffff;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 25px;
+color: #000000;
+margin-bottom: 2vh;
+}
+.facList {
+    background-color:  #ffffff;
+    position:absolute;
+    top:85vh;
+    left:26vw;
+    list-style: none;
+    background:none;
+}
+.facList li {
+    background-color:  #ffffff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 25px;
+    color: #000000;
+    margin-bottom: 2vh;
+}
+@media (max-width:1000px) and (min-width:800px) {
+    .TIMETABLE {
+        overflow-x: hidden;
+       
+    }
+    .timeTable {
+        width:84vw;
+        left:8vw;
+        top:25vh;
+        /* margin-left: 50px; */
+    }
+    .table{
+        width:82vw;
+    }
+    .table td{
+        height: 5.5vh;
+        width:90vw;
+    }
+    .dbTT{
+        left:14vw;
+    }
+    .subject{
+top:55vh;
+    }
+    .faculty{
+        top:55vh;
+        left:50vw;
+    }
+    .subList{
+        top:60vh;
+    }
+    .facList{
+        left:50vw;
+        top:60vh;
+    }
+}
+@media (max-width:800px) {
+    .TIMETABLE {
+      overflow-x: auto;
+    }
+    .timeTable {
+        width:150vw;
+        left:5vw;
+        top:25vh;
+       height:150vh;
+        margin-right:50px;
+    }
+    .table{
+        width:148vw;
+    }
+    .table td{
+        height:7vh;
+        width:8vw;
+    }
+    .subject{
+top:70vh;
+font-size: 1.5rem;
+    }
+    .faculty{
+top:70vh;
+left:50vw;
+font-size: 1.5rem;
+    }
+    .subList{
+top:75vh;
+font-size: 1.3rem;
+    }
+    .facList{
+top:75vh;
+left:50vw;
+font-size: 1.3rem;
+    }
+}
+@media (max-width:450px) {
+    .timeTable {
+        width:280vw;
+        left:5vw;
+        top:30vh;
+        height:150vh;
+       
+        margin-right:50px;
+    }
+    .table{
+        width:278vw;
+    }
+    .table td{
+        font-size: 1.5rem;
+        height:9vh;
+        width:95vw;
+    }
+    .faculty{
+        top:86vh;
+        left:70vw;
+    }
+    .subject{
+        top:86vh;
+    }
+    .subList{
+        top:92vh;
+    }
+    .facList{
+        top:92vh;
+        left:70vw;
+    }
+}
+@media (max-width:300px) {
+    .timeTable {
+        width:250vw;
+        left:5vw;
+        top:30vh;
+        height:200vh;
+        margin-right:50px;
+    }
+    .table{
+        width:248vw;
+    }
+    .table td {
+        width:120vw;
+        height:10vh;
+    }
+    .subject{
+        top:100vh;
+    }
+    .facList{
+        top:108vh;
+        left:95vw;
+    }
+    .faculty{
+        top:100vh;
+        left:95vw;
+    }
+    .subList{
+        top:108vh;
+    }
+}
+
+.TIMETABLE{
+    width:fit-content;
+}

@@ -1,0 +1,940 @@
+body {
+    overflow-x: hidden;
+    /* height:200vh; */
+}
+.dash {
+    position: absolute;
+    left: 26vw;
+    top: 14vh;
+    width: 50vw;
+    height: 5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    background: none;
+}
+
+#background {
+    position: absolute;
+    width: 65vw;
+    height: 170vh;
+    background-color: white;
+    margin-top: 21vh;
+    margin-left: 26vw;
+    border-radius: 15px;
+    margin-bottom:50vh;
+    padding-bottom: 50vh;
+}
+#facultyBackground{
+    position: absolute;
+    width: 65vw;
+    height: 120vh;
+    background-color: white;
+    margin-top: 25vh;
+    margin-left: 26vw;
+    border-radius: 15px;
+    margin-bottom:50vh;
+    padding-bottom: 50vh;
+}
+#avatar {
+    position: absolute;
+    background-color: white;
+    top: 9vh;
+    left: 3vw;
+    height: 50vh;
+    width: 13vw;
+background: none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+color: #000000;
+}
+#profileImage{
+    background:none;
+    width:12vw;
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    height: 24vh;
+    width: 12vw;
+    border-radius: 45%;
+}
+#dis-name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    background:none;
+    color: #6C63FF;
+    position:absolute;
+    top:25.5vh;
+    left:3vw;
+}
+.avatarInfo{
+    background:none;
+    position:absolute;
+    top:29.5vh;
+    left:2.2vw;
+}
+#heading1 {
+    position: absolute;
+    width: 229px;
+    height: 37px;
+    left: 22.5vw;
+    top: 9.5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    background-color: white;
+    color: #000000;
+}
+
+#personalinfo {
+    position: absolute;
+    width: 8vw;
+    font-weight: 600;
+    height: 5vh;
+    left: 23vw;
+    top: 20.5vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 17px;
+    color: #6C63FF;
+}
+
+#stu-name {
+    position: absolute;
+    width: 25vw;
+    height: 4vh;
+    left: 23vw;
+    top: 28vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: white;
+    color: #000000;
+}
+#wrongName {
+    position:absolute;
+    top:36vh;
+    left:38vw;
+    width:20vw;
+    color:rgba(255,0,0,0.7)
+}
+#sex {
+    background-color: white;
+    position: absolute;
+    width: 20vw;
+    height: 17px;
+    left: 23vw;
+    top: 35.9vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+.dropdownGender{
+    position: absolute;
+    top:35vh;
+    left:38vw;
+    background:none;
+    background:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    color:black;
+width: 12vw;
+height: 5vh;
+border: 0.5px solid #D9D9D9;
+border-radius: 8px;
+padding-left: 6px;
+border:1px solid rgba(104, 101, 101,);
+/* border:none; */
+outline:none; 
+}
+#bl-gr {
+    position: absolute;
+    width: 20vw;
+    height: 17px;
+    left: 23vw;
+    top: 43.7vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+#dob {
+    position: absolute;
+    width: 13vw;
+    height: 17px;
+    left: 23vw;
+    top: 52.4vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+#heading2 {
+    position: absolute;
+    width: 114px;
+    height: 17px;
+    left: 23vw;
+    top: 69vh;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6C63FF;
+    z-index:30;
+}
+
+#email {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 23vw;
+    top: 61vh;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+}
+
+#address {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 23vw;
+    top: 76.9vh;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+}
+
+#city {
+    position: absolute;
+    width: 10vw;
+    height: 17px;
+    left: 23vw;
+    top: 85.3vh;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+}
+
+#state {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 93.5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+    background: none;
+}
+
+#stu-phone {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 102vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+    background: none;
+}
+#pin{
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 110vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    z-index:30;
+    background: none;
+}
+
+#heading3 {
+    position: absolute;
+    width: 56px;
+    height: 17px;
+    left: 23vw;
+    top: 119vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6C63FF;
+}
+
+#fat-name {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 119vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+#fat-phone {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 135.3vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+#fat-name {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 127vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+#mot-name {
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 143.5vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+#mot-phone{
+    position: absolute;
+    width: 149px;
+    height: 17px;
+    left: 23vw;
+    top: 152vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+}
+.profileField {
+    background:none;
+   
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    color:black;
+width: 12vw;
+height: 5vh;
+border: 0.5px solid #D9D9D9;
+border-radius: 8px;
+padding-left: 6px;
+/* border:none; */
+/* border:1px solid rgba(104, 101, 101, 0.05); */
+}
+.space1 {
+    position: absolute;
+    top:27vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+}
+.space2 {
+    position: absolute;
+    top:35vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+}
+
+.space3 {
+    position: absolute;
+    top:43vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+}
+.space4{
+    position: absolute;
+    top:51vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+}
+.space5{
+    position: absolute;
+    top:59vh;
+    left:38vw;
+    /* width:20vw; */
+    background:none;
+    z-index:30;
+    /* border-bottom: 1px solid black; */
+}
+
+.space6{
+    position: absolute;
+    top:76vh;
+    left:38vw;
+    background:none;
+    z-index:30;
+    /* border-bottom: 1px solid black; */
+}
+.space7{
+    position: absolute;
+    top:84vh;
+    left:38vw;
+    background:none;
+    z-index:30;
+    /* border-bottom: 1px solid black; */
+}
+.space8{
+    position: absolute;
+    top:92vh;
+    left:38vw;
+    background:none;
+    z-index:30;
+    /* border-bottom: 1px solid black; */
+}
+.space9{
+    position: absolute;
+    top:100vh;
+    left:38vw;
+    background:none;
+    z-index:30;
+    /* border-bottom: 1px solid black; */
+}
+.space11{
+    position: absolute;
+    top:125.6vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+}
+.space10{
+position: absolute;
+top:108vh;
+left:38vw;
+background:none;
+/* border-bottom: 1px solid black; */
+}
+.space12{
+    position: absolute;
+    top:133.7vh;
+    left:38vw;
+    background:none;
+    /* border-bottom: 1px solid black; */
+    }
+    .space13{
+        position: absolute;
+        top:141.7vh;
+        left:38vw;
+        background:none;
+        /* border-bottom: 1px solid black; */
+        }
+        .space14{
+            position: absolute;
+            top:149.7vh;
+            left:38vw;
+            background:none;
+            /* border-bottom: 1px solid black; */
+            }
+#editButton {
+    position:absolute;
+    top:45vh;
+    left:5.3vw;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+    width:9vw;
+    height:5vh;
+    padding:5px;
+    cursor: pointer;
+}
+#cancelButton {
+    position:absolute;
+    top:45vh;
+    left:5.3vw;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+    width:9vw;
+    height:5vh;
+    padding:5px;
+    cursor: pointer;
+    display:none;
+}
+#saveButton {
+    position:absolute;
+    top:52vh;
+    left:5.3vw;
+    width:9vw;
+    height:5vh;
+    padding:5px;
+    background: #6C63FF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+color:white;
+display: none;
+cursor: pointer;
+
+}
+
+.CONTACT {
+    position:absolute;
+    top:67vh;
+    width:65vw;
+    height:50vh;
+    background-color: rgba(238, 241, 255, 0.5);
+    z-index:25;
+}
+.avatarInfo{
+    background: none;
+}
+/* @media (max-width:940px) {
+    #background {
+        width:72vw;
+    }
+    .space1 , .space2 , .space3 , .space4 , .space5 ,.space6 , .space7 , .space8 , .space9 , .space11 , .space10 {
+        left:45vw;
+    }
+    #personalinfo{
+        width:20vw;
+    }
+}
+@media (min-width:340px) and (max-width:920px) {
+    body {
+        width:0vw;
+    }
+    #background {
+ overflow-x:hidden ;
+    }
+    .dash{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:23vh;
+    }
+    #heading1 {
+        top:2vh;
+        left:5vw;
+        font-size: 1.3rem;
+        width:50vw;
+    }
+    #background {
+        width:90vw;
+        height:150vh;
+        position:absolute;
+        left:-20.6vw;
+    }
+    #avatar {
+        background-color:  #eef1ff;;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+height:24vh;
+width:80vw;
+left:5vw;
+    }
+    #profileImage {
+        position:absolute;
+        top:6vh;
+        left:4vw;
+        width:20vw;
+    }
+    #PROFILE {
+        position:absolute;
+        top:18vh;
+        left:-10vw;
+    }
+    #personalinfo {
+width:40vw;
+    }
+    #stu-phone , #fat-name , #fat-phone{
+        width:30vw;
+    }
+    .space1{
+        top:29vh;
+    }
+    .space2{
+        top:34.9vh;
+    }
+    .space3{
+        top:42vh;
+    }
+    .space4{
+        top:50vh;
+    }
+    .space5{
+        top:69.9vh;
+    }
+    .space6{
+        top:76.5vh;
+    }
+    .space7{
+        top:84vh;
+    }
+    .space8{
+        top:91.6vh;
+    }
+    .space9{
+        top:98.5vh;
+    }
+    .space11{
+        top:112vh;
+    }
+    .space10{
+        top:119vh;
+    }
+    #stu-name  , #sex ,  #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        font-size: 0.85rem;
+    }
+    .profileField {
+        position:absolute;
+        left:15vw;
+        width:30vw;
+        font-size: 0.85rem;
+    }
+    #dis-name {
+        background: none;
+        position:absolute;
+        left:27vw;
+        top:7vh;
+    }
+    .avatarInfo {
+        position:absolute;
+        left:28vw;
+        top:10vh;
+    }
+}
+@media (min-width:390px) and (max-width:950px) {
+    .dash{
+        font-size: 1.7rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:25vh;
+    }
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size:1.1rem;
+    }
+    #stu-name  , #sex , #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        font-size: 1.1rem;
+    }
+    #heading2{
+        width:50vw;
+    }
+}
+@media (min-width:768px) and (max-width:912px) {
+    .dash{
+        font-size: 2.3rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:25vh;
+    }
+    #heading1 {
+        top:4vh;
+        left:5.5vw;
+        font-size: 1.7rem;
+    }
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size: 1.45rem;
+        width:30vw;
+    }
+    #bl-gr {
+        width:30vw;
+    }
+    #stu-name  , #sex ,  #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        font-size: 1.4rem;
+    }
+    #dis-name{
+        left:32vw;
+        top:8vh;
+        font-size: 1.45rem;
+        font-weight:600;
+    }
+    .avatarInfo{
+        top:11.4vh;
+        left:32vw;
+        font-size: 1.35rem;
+        font-weight:500;
+        line-height: 25px;
+    }
+    .space1{
+        top:27.3vh;
+    }
+    .space2{
+        top:33.9vh;
+    }
+    .space3{
+        top:41.5vh;
+    }
+    .space4{
+        top:49.2vh;
+    }
+    .space5{
+        top:69.4vh;
+    }
+    .space6{
+        top:75.9vh;
+    }
+    .space7{
+        top:83.5vh;
+    }
+    .space8{
+        top:90.5vh;
+    }
+    .space9{
+        top:97.9vh;
+    }
+    .space11{
+        top:111.5vh;
+    }
+    .space10{
+        top:118.5vh;
+    }
+}
+@media (min-width:912px) and (max-width:912px) {
+    .profileField , #personalinfo , #heading2 , #heading3 {
+        font-size: 1.65rem;
+        width:30vw;
+    }
+    #bl-gr {
+        width:30vw;
+    }
+    #stu-name  , #sex , #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        font-size: 1.55rem;
+}
+#dis-name{
+    left:34vw;
+    top:8vh;
+    font-size: 1.65rem;
+    font-weight:600;
+}
+.avatarInfo{
+    top:11.5vh;
+    left:34vw;
+    font-size: 1.45rem;
+    font-weight:500;
+    line-height: 25px;
+
+}
+}
+@media (max-width:540px) and (min-width:540px) {
+    #stu-name  , #sex , #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        width:30vw;
+}
+#dis-name{
+    left:35vw;
+    top:8vh;
+  font-weight: 600;
+}
+.avatarInfo{
+    top:11.5vh;
+    left:35vw;
+}
+.space1{
+    top:27.5vh;
+}
+.space2{
+    top:34.9vh;
+}
+.space3{
+    top:41.5vh;
+}
+.space4{
+    top:49vh;
+}
+.space5{
+    top:69.9vh;
+}
+.space6{
+    top:77vh;
+}
+.space7{
+    top:84vh;
+}
+.space8{
+    top:91vh;
+}
+.space9{
+    top:98vh;
+}
+.space11{
+    top:112vh;
+}
+.space10{
+    top:119vh;
+}
+}
+@media (min-width:280px) and (max-width:280px) {
+    body {
+      
+        width:0vw;
+    }
+    .dash{
+        font-size: 1.35rem;
+        width:90vw;
+        position:absolute;
+        left:7vw;
+        top:2vh;
+    }
+    #heading1 {
+        top:2vh;
+        left:5vw;
+        font-size: 1.2rem;
+    }
+    #background {
+        width:90vw;
+        height:150vh;
+        position:absolute;
+        left:-20.6vw;
+    }
+    #avatar {
+        background-color:  #eef1ff;;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+height:24vh;
+width:80vw;
+left:5vw;
+    }
+    #profileImage {
+        position:absolute;
+        top:7vh;
+        left:4vw;
+        width:20vw;
+    }
+    #PROFILE {
+        position:absolute;
+        top:18vh;
+        left:-10vw;
+    }
+    #personalinfo {
+width:40vw;
+    }
+    #stu-phone , #fat-name , #fat-phone{
+        width:30vw;
+    }
+    #stu-name  , #sex , #bl-gr , #dob , #address , #city , #state , #stu-phone , #pin , #fat-name , #fat-phone {
+        font-size: 0.75rem;
+    }
+    .profileField {
+        position:absolute;
+        left:15vw;
+        width:30vw;
+        font-size: 0.75rem;
+    }
+    #dis-name {
+        background: none;
+        position:absolute;
+        left:26vw;
+        top:7vh;
+        font-size: 0.85rem;
+    }
+    .avatarInfo {
+        position:absolute;
+        left:27vw;
+        top:10.5vh;
+        font-size: 0.75rem;
+    }
+    .space1{
+        top:28.5vh;
+    }
+    .space2{
+        top:35.2vh;
+    }
+    .space3{
+        top:42.3vh;
+    }
+    .space4{
+        top:50vh;
+    }
+    .space5{
+        top:70vh;
+    }
+    .space6{
+        top:77.2vh;
+    }
+    .space7{
+        top:84.0vh;
+    }
+    .space8{
+        top:91.3vh;
+    }
+    .space9{
+        top:98.3vh;
+    }
+    .space11{
+        top:112.4vh;
+    }
+    .space10{
+        top:119.5vh;
+    }
+} */

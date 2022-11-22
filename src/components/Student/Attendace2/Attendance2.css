@@ -1,0 +1,252 @@
+.SCardCallNew{
+    display:flex;
+    flex-direction:column;
+    background: none;
+    margin-top:17vh;
+}
+.tableCard{
+    background: none;
+    display: block;
+    width:65vw;
+    height:7vh;
+    margin-left:1vw;
+    background-color: #EEF1FF;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+padding-top: 2vh;
+margin-top:2vh;
+}
+#SCdDate{
+   
+   /* margin-top:-5vh; */
+   width:15vw;
+   padding:10px;
+   /* height:8vh; */
+   /* background-color: black; */
+   border:1px solid white;
+   background: none;
+  position:absolute;
+  left:20vw;
+}
+#SCdStatus{
+    width:15vw;
+    padding:10px;
+    border:1px solid white;
+    background: none;
+}
+#SCdMonth1{
+    position:absolute;
+    left:19vw;
+    font-size:1rem;
+    color:black;
+}
+#SCdDate1{
+    position:absolute;
+    left:28vw;
+    font-size:1rem;
+    color:black;
+}
+#SCdStatus1{
+    position:absolute;
+    right:1.2vw;
+    font-size:1rem;
+    color:black;
+    background-color:   #62DDB0;
+    height:7.4vh;
+    width:21vw;
+    padding-top:1vh;
+    margin-top: -1.8vh;
+}
+.monthListNew{
+    position:absolute;
+    top:40.35vh;
+    left:27.18vw;
+    list-style: none;
+    width:12.8vw;
+    height: 8.6vh;
+    background:transparent;
+    opacity:1;
+    cursor: pointer;
+}
+.month2{
+    width:13vw;
+    opacity:0;
+}
+.date2{
+    padding-right:0;
+    width:11.5vw;
+}
+.day2{
+    width:13.5vw;
+}
+.time2{
+    width:12.5vw;
+}
+.status2{
+    width:14.5vw;
+}
+.attendHeadSub{
+    position:absolute;
+    top:1vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+border-radius: 8px 8px 0px 0px;
+background: none;
+background-color: #6C63FF;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+padding-top: 2vh;
+width:65vw;
+}
+.attendEachSub{
+    position:absolute;
+    top:10vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+background: none;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+background-color:#EEF1FF;
+color: #FFFFFF;
+text-align: center;
+padding-top: 2vh;
+width:65vw;
+}
+.attendTableSub{
+    width:65vw;
+    margin-top: 10vh;
+     margin-left:1vw;
+}
+.attendRowSub{
+    position:absolute;
+    top:18vh;
+    left:1vw;
+    box-sizing: border-box;
+height:9vh;
+border-radius: 8px 8px 0px 0px;
+background: none;
+background-color:  #D9D9D9;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 37px;
+color: #FFFFFF;
+text-align: center;
+/* padding-top: 2vh; */
+width:65vw;
+}
+.attendRowSub td{
+    background: #D9D9D9;
+    border: 1px solid #FFFFFF;
+    height: 9vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+.stAttCardRowNew{
+    margin-left:1vw;
+    box-sizing: border-box;
+height:7vh;
+border-radius: 6px 6px 4px 4px;
+background: none;
+/* background-color: #6C63FF; */
+background-color: #EEF1FF;;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 37px;
+/* color: #FFFFFF; */
+text-align: center;
+padding-top: 1.7vh;
+/* position:absolute; */
+/* top:30vh; */
+width:65vw;
+/* margin-top:vh; */
+margin-bottom:0.2vh;
+}
+#StCdDate1{
+    color:black;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:16vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#StCdDay1{
+    color:black;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:28vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#StcdTime1{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+position:absolute;
+left:40.5vw;
+line-height: 20px;
+color: #000000;
+background:none;
+}
+#attendbarNew{
+    width:13.8vw;
+    height:6.8vh;
+    background-color: aquamarine;
+    position:absolute;
+    left:52vw;
+    margin-top:-1.5vh;
+}
+ #StCdStatus1{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.1rem;
+line-height: 20px;
+color: #000000;
+background:none;
+padding-top:1.5vh;
+/* height:4vh; */
+/* display:none; */
+ }
+ .tableSub{
+    position:absolute;
+    top:22vh;
+    left:26vw;
+ }
+ #select-month{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 20px;
+    color: #000000;
+    background:none;
+    padding-top:1.5vh;
+ }

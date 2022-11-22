@@ -1,0 +1,528 @@
+#background-dash1 {
+    position: absolute;
+    height: 170vh;
+    width: 67vw;
+    background-color: white;
+    z-index: 34;
+    left: 25vw;
+    top: 20vh;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px; */
+}
+
+#container1 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+
+#container2 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#container3 {
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#card1 {
+    position: absolute;
+    width: 33vw;
+    height: 30vh;
+    left: 26vw;
+    top: -10vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#card2 {
+    position: absolute;
+    width: 33vw;
+    height: 30vh;
+    left: 26vw;
+    top: 30vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+.updateCardRowS{
+    margin-left:2vw;
+    width: 63vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    /* background-color: rgb(226, 132, 132); */
+    /* background-color: rgba(238, 241, 255, 0.5); */
+    background-color: white;
+    margin-bottom: 4vh;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
+}
+.updateCdTitle{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 0.9rem;
+line-height: 20px;
+color: #000000;
+/* background:none; */
+    background-color: white;
+}
+.updateCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 20px;
+    color: #000000;
+    /* background:none; */
+z-index: 999999;
+    background-color: white;
+}
+
+#card38 {
+    position: absolute;
+    width: 33vw;
+    height: 30vh;
+    left: 26vw;
+    top: 72vh;
+
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#dashboardH1 {
+    position: absolute;
+    width: 45vw;
+    height: 5vh;
+    left: 25vw;
+    top: 12.5vh;
+    /* background-color: red; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 37px;
+    color: #000000;
+}
+
+#img {
+    height: 18.5vh;
+    width: 8.5vw;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid black;
+    top: 6vh;
+    left: 1.7vw;
+    background-color: white;
+}
+
+.heading {
+    width: 100%;
+    height: 3em;
+    background-color: #6C63FF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.title {
+    position: absolute;
+    background-color: #6C63FF;
+    color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    top: 1.7vh;
+}
+
+#chart {
+    position: absolute;
+    width: 8.5vw;
+    height: 18.5vh;
+    background-color: white;
+    left: 2.1vw;
+    top: 6.5vh;
+}
+
+#greeting1 {
+    position: absolute;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 37px;
+    top: 5vh;
+    left: 3vw;
+    width: 25vw;
+    background-color: white;
+ 
+}
+
+.bold {
+    background-color: white;
+    font-weight: 600;
+}
+
+#greeting2 {
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    /* identical to box height */
+    position: absolute;
+    top:6vh;
+    width: 24vw;
+    color: #7C7C7C;
+}
+
+#today_class {
+    position: absolute;
+    width: 16vw;
+    height: 6vh;
+    left: 3vw;
+    top: 24vh;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.7rem;
+    line-height: 37px;
+    background: none;
+    color: #000000;
+
+}
+
+#class_bg {
+    position: absolute;
+    width: 24vw;
+    height: 67vh;
+    left: 3vw;
+    top: 31vh;
+    background: #EEF1FF;
+    border-radius: 8px;
+}
+
+#date {
+    position: absolute;
+    width: 14.5vw;
+    height: 3.2vh;
+    left: 17px;
+    top: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 20px;
+    color: #252525;
+}
+
+.class {
+    position: absolute;
+    width: 21.3vw;
+    height: 9vh;
+    left: 0.2vw;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+#class1 {
+    top: 7vh;
+}
+
+#class2 {
+    top: 19vh;
+}
+
+#class3 {
+    top: 31vh;
+}
+
+#class4 {
+    top: 43vh;
+}
+
+#class5 {
+    top: 55vh;
+}
+
+.circle_name {
+    position: absolute;
+    height: 5vh;
+    width: 2.5vw;
+    background-color: #6C63FF;
+    border-radius: 50%;
+    top: 1.5vh;
+    left: 1vw;
+}
+
+.class_name12 {
+    position: absolute;
+    width: 19vw;
+    height: 3.5vh;
+    left: 3.8vw;
+    top: 1.5vh;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 15px;
+    /* identical to box height */
+    color: #252525;
+}
+
+.class_time4 {
+    position: relative;
+    width: 4vw;
+    height: 2vh;
+    left: 3.8vw;
+    top: 5.3vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 15px;
+    /* identical to box height */
+    background: none;
+
+    color: #4B4B4B;
+}
+
+#profile_details {
+    position: absolute;
+    width: 14vw;
+    height: 5vh;
+    left: 26vw;
+    top: -16vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 37px;
+}
+
+#attendance {
+    position: absolute;
+    width: 12vw;
+    height: 4.2vh;
+    left: 26vw;
+    top: 23vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 37px;
+    /* identical to box height */
+    background:none;
+
+    color: #000000;
+}
+#attendance_details{
+    position: absolute;
+width: 15vw;
+height: 15vh;
+left: 13vw;
+top: 8vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1rem;
+line-height: 24px;
+/* identical to box height */
+
+
+color: #000000;
+}
+#updates8 {
+    position: absolute;
+    width: 28px;
+    height: 37px;
+    left: 26vw;
+    top: 64vh;
+    background-color: white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 37px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+#student_details {
+    position: absolute;
+    height: 15vh;
+    width: 15vw;
+    left: 13vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 17px;
+    line-height: 24px;
+    top: 6vh;
+    color: #000000;
+}
+.bold_name{
+    font-weight: 600;
+}
+#right{
+    position: absolute;
+    top: 33vh;
+    left: 4vw;
+}
+#read-more{
+    position:absolute;
+    left:26vw;
+    top:25.5vh;
+    width:15vw;
+    background:none;
+    color:rgb(5, 5, 108);
+}
+.updateDashCardRow{
+    margin-left:1.5vw;
+    margin-top:3.5vh;
+    width: 30vw;
+    height: fit-content;
+    border-radius: 8px;
+    z-index:20;
+    background:none;
+    /* background-color: rgb(226, 132, 132); */
+    background-color: white;
+    margin-bottom: 4vh;
+    padding: 5px;
+    padding-right:8px;
+    padding-left:8px;
+}
+.updateDashCdTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #000000;
+    background:none;
+}
+.updateDashCdDesc{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.7rem;
+    line-height: 18px;
+    color: #000000;
+    background:none;
+}
+@media (max-width:800px){
+    #background-dash{
+    height: 250vh;
+}
+    #section{
+    width: 100vw;
+}
+#greeting{
+    display: none;
+}
+#today_class{
+    top: 105vh;
+    width: 50vw;
+    left: 10vw;
+}
+#class_bg{
+    top: 110vh;
+    width: 60vw;
+    left: 8vw;
+}
+#class1{
+    width: 50vw;
+}
+#class2{
+    width: 50vw;
+}
+#class3{
+    width: 50vw;
+}
+#class4{
+    width: 50vw;
+}
+#class5{
+    width: 50vw;
+}
+.circle_name{
+    width: 5vw;
+    height: 5vh;
+}
+.class_name{
+    left: 10vw;
+    width: 40vw;
+}
+.class_time{
+    left: 10vw;
+    width: 30vw;
+}
+#date{
+    width: 50vw;
+}
+#greeting1{
+    display: none;
+}
+#right{
+    left: -20vw;
+}
+#profile_details{
+    width: 55vw;
+}
+#card1{
+    width: 60vw;
+}
+#card2{
+    width: 60vw;
+}
+#img{
+    height: 20vh;
+    width: 18vw;
+}
+#chart{
+    height: 20vh;
+    width: 18vw;
+}
+#student_details{
+    left: 25vw;
+    line-height: 40px;
+}
+#attendance_details{
+    left: 25vw;
+    line-height: 30px;
+    width: 30vw;
+    top: 10vh;
+}
+#updates1{
+    top: 150vh;
+}
+#card31{
+    top: 160vh;
+    width: 58vw;
+}
+}

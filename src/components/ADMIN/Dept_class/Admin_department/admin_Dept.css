@@ -1,0 +1,356 @@
+#addIcon{
+    position:absolute;
+    top:3.1vh;
+    right:12.4vw;
+    width:3vw;
+    font-size: 1rem;
+    background:none;
+
+}
+.adminAddOuterBlock{
+    width:65vw;
+    height:fit-content;
+    position:absolute;
+    top:10vh;
+    left:24vw;
+    background: #FFFFFF;
+border-radius: 8px;
+}
+.adminBlueRow{
+    position:relative;
+    top:4vh;
+    left:1.5vw;
+    text-align:center;
+    padding-top:2vh;
+    height:7vh;
+    width:62vw;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.2rem;
+line-height: 20px;
+color: #FFFFFF;
+background: #6C63FF;
+border-radius: 8px;
+}
+.AdminAddOutBlock{
+    height:50vh;
+    width:62vw;
+    position:relative;
+    top:8vh;
+    left:1.5vw;
+    background: #EEF1FF;
+border-radius: 8px;
+margin-bottom:5vh;
+
+}
+.department{
+    box-sizing: border-box;
+position: relative;
+top:1.5vh;
+left:1.5vh;
+width: 14vw;
+height: 5vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1rem;
+line-height: 20px;
+background:none;
+border: 1px solid #D9D9D9;
+border-radius: 4px;
+text-align: center;
+padding-top:0.8vh;
+
+}
+#plus{
+    font-size:1.8rem;
+    font-weight: 500;
+    background:none;
+    position:absolute;
+    right:12vw;
+    /* margin-right:9.5vw; */
+}
+.addDept{
+    float:right;
+    box-sizing: border-box;
+    position: relative;
+    top:-3.2vh;
+   right:1.2vw;
+    width: 14vw;
+    height: 5.2vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 20px;
+    background:none;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+padding-top:1vh;
+padding-right:3.5px;
+text-align: end;
+}
+.deptList{
+    display:flex;
+    flex-wrap: wrap;
+    background:none;
+    gap:8vh;
+    margin-top:4.5vh;
+    justify-content: space-between;
+}
+.AdmWhiteCompField{
+    box-sizing: border-box;
+    width: 14vw;
+    background:none;
+    height: 5.2vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    text-align: center;
+padding-top:0.8vh;
+}
+.addInnerBlock{
+    position: absolute;
+width: 45vw;
+height: 57vh;
+left: 10vw;
+top: 10vh;
+background: #FFFFFF;
+border-radius: 8px;
+box-shadow: 0 0 10px;
+}
+.editDeptMain{
+    width:11vw;
+    height:3.5vh;
+    /* margin-left:1.05vw; */
+    /* margin-bottom:6vh; */
+    background:none;
+    padding-left:5px;
+    display:flex;
+    z-index:5;
+    margin-right:-4vw;
+}
+.editWhiteCompField{
+    z-index:5;
+    box-sizing: border-box;
+    width: 20vw;
+    height: fit-content;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 15px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    /* text-align: center; */
+padding-top:1vh;
+padding-left:0.5vw;
+padding-right: 1vw;
+}
+#departName{
+    width:10vw;
+    background:none;
+    line-height:15px;
+}
+.editted{
+    background:none;
+    position:relative;
+    top:6vh;
+    left:11vw;
+    cursor: pointer;
+}
+.editAdminDept{
+    box-sizing: border-box;
+    width:7vw;
+    /* height:/0vh; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 0.9rem;
+    background:none;
+    text-align: center;
+padding-top:0.8vh;
+cursor:pointer;
+}
+.dltAdminDept{
+    box-sizing: border-box;
+    width:7vw;
+    /* height:10vh; */
+    background:none;
+    font-size: 0.9rem;
+    background:none;
+padding-top:0.8vh;
+cursor:pointer;
+
+}
+#dDEditValue{
+width:7vw;
+background-color:#FFFFFF;
+height:10vh;
+font-size:0.6rem;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+border: 1px solid #D9D9D9;
+border-radius: 4px;
+text-align: center;
+padding-top:0.8vh;
+position:relative;
+bottom:12vh;
+left:12vw;
+display:none;
+}
+.add-new-dept{
+    width:42vw;
+    height:8vh;
+    background:none;
+  margin-top:6vh;
+margin-left:1.5vw;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.2rem;
+line-height: 22px;
+}
+.dept_head{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 1.3rem;
+line-height: 22px;
+margin-left:1.5vw;
+background:none;
+}
+.dept_head_id{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 22px;
+    margin-left:1.5vw;
+    background:none;
+    position:relative;
+    top:4.5vh;
+}
+.dept_head_input{
+    box-sizing: border-box;
+position: absolute;
+width: 19vw;
+height: 5vh;
+margin-left: 1.5vw;
+top: 18.5vh;
+padding-left: 5px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+}
+.dept_head_id_input{
+    box-sizing: border-box;
+position: absolute;
+width: 19vw;
+height: 5vh;
+margin-left: 1.5vw;
+top: 30vh;
+padding-left: 5px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+border-radius: 8px;
+}
+.cancel_add_dept{
+    background: #6C63FF;
+border-radius: 8px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+color: #FFFFFF;
+width: 19vw;
+height: 5.2vh;
+margin-left: 1.5vw;
+position:absolute;
+top:38vh;
+border:0.5px solid black;
+}
+.done_add_dept{
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 19vw;
+    height: 5.2vh;
+    margin-left: 1.5vw;
+    position:absolute;
+    top:46vh;
+    border:0.5px solid black;
+}
+.newDeptErr{
+    background:none;
+    color:red;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    position:relative;
+    top:23vh;
+    left:2vw;
+    text-transform: capitalize;
+}
+#plusDept{
+    font-size:1.2rem;
+    font-weight: 500;
+     background:none;
+     /* float:right; */
+    position:relative;
+    left:11.3vw;
+     cursor: pointer;
+     z-index:10;
+}
+#minusDept{
+    font-size:1.6rem;
+    font-weight: 500;
+     background:none;
+     /* float: right; */
+     position:relative;
+     left:12.05vw;
+     cursor: pointer;
+     z-index:10;
+}
+#DEPART{
+    width:100vw;
+    height:91vh;
+    margin-left:-1.5vw;
+    margin-top:-1vh;
+}
+.dept_head_inputD{
+    
+    box-sizing: border-box;
+    position: absolute;
+    width: 19vw;
+    height: 5vh;
+    margin-left: 1.5vw;
+    top: 19vh;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+.updateNewCardDiv{
+    position:absolute;
+    top:15vh;
+    left:25vw;
+}
