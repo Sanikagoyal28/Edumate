@@ -1,11 +1,10 @@
 import axios from "axios";
 import React from "react";
 import { useState , useEffect} from "react";
-// import Navbar from "../Navbar/Na
 import AdmBar from "./admin_bar/AdmBar";
-// import "./UpdateEmail.css";
-// import updateEmailImg from "./updateEmailImg.svg";
+import "./admUpdEmail.css";
 import * as ReactBootStrap from "react-bootstrap";
+import admUpdateEmail from "../Assests/Images/admUpdateEmail.svg"
 function AdmUpdateEmail() {
     const [email, setEmail] = useState("")
     const [otp, setOtp] = useState('')
@@ -35,12 +34,10 @@ const [loadBool,setLoadBool] = useState(false)
             console.log(res);
             setEmailMsg(res.data);
             setLoadBool(false)
-            if (res.status == 200) {
-                console.log("asdfsdf");
-                document.getElementById('update_email_otp_input').style.display = "block"
-                document.getElementById('update_email_otp_btn').style.display = "block"
-                document.getElementById('send_otp_info').style.display = "block"
-            }
+                document.getElementsByClassName('sendOtpAdm')[0].style.display = "block"
+                document.getElementById('adm_otp_input').style.display = "block"
+                document.getElementsByClassName('resendOtpAdm')[0].style.display = "block"
+                document.getElementById('adm_otp_btn').style.display = "block"
         }).catch((err) => {
             console.log(err);
             setLoadBool(false)
@@ -71,9 +68,11 @@ const [loadBool,setLoadBool] = useState(false)
             <button className="emailButton" onClick={handleUpdateEmail}>Done</button>
             {/* <p className="emailMsgShow">{emailMsg}</p> */}
             {/* <input type="text" id="fieldOtp" value={otp} onChange={handleOtp}></input> */}
-            <div id="send_otp_info">Enter otp sent to example@gmail.com</div>
-            <input type="text" id="update_email_otp_input" onChange={handleotp}/>
-            <button id="update_email_otp_btn" onClick={checkotp}>SEND</button>
+            <div className="sendOtpAdm">Enter otp sent to example@gmail.com</div>
+            <input type="text" id="adm_otp_input" onChange={handleotp}/>
+            <p className="resendOtpAdm">Resend OTP in </p>
+            <button id="adm_otp_btn" onClick={checkotp}>Continue</button>
+            <img src={admUpdateEmail} id="admUpdEmailImage" />
         </div>
         {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>

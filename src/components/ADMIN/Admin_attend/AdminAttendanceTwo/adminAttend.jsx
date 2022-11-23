@@ -7,6 +7,7 @@ import { useEffect , useState} from "react";
 import axios from "axios";
 import SubjectAttend from "../../../Student/Attendace2/Attendance";
 import { propTypes } from "react-bootstrap/esm/Image";
+import * as ReactBootStrap from "react-bootstrap";
 function AdmAttend(){
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -38,7 +39,6 @@ const [deptBool,setDeptBool] = useState(false)
     },[])
     console.log(departId)
 
-
     const [classList, setClassList] = useState([]);
 function handleClassInDept(){
     if(deptBool){
@@ -59,14 +59,18 @@ console.log(classList);
  function handleClass(e){
     setClassId(e.target.value);
  }
+ const [loadBool , setLoadBool] = useState(false);
  function handleSubjectInClass(){
+    setLoadBool(true)
     axios.get("https://erp-edumate.herokuapp.com/api/user/admin/studentattendancelist/"+classId+"/",config)
     .then((res)=>{
         console.log(res);
         console.log(res.data);
+        setLoadBool(false)
         setSubjectList(res.data);
     }).catch((err)=>{
         console.log(err);
+        setLoadBool(false)
     })
  }
  
@@ -85,6 +89,12 @@ function DropDownClassList (classList){
                     <AdmAttendCard name={subjectList.student_name} Number={subjectList.userID} attend={subjectList.attendance_percent} />
                 </>
              }
+             useEffect(()=>{
+                if(loadBool)
+                document.body.style.opacity="0.5"
+                else
+                document.body.style.opacity="1"
+              },[loadBool])
     return <>
     <AdmBar />
     <div className="admAttendWhiteDiv">
@@ -105,6 +115,7 @@ function DropDownClassList (classList){
             {subjectList.map(createSubject)}
         </div> 
     </div>
+    {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
     </>
 }
 export default AdmAttend;

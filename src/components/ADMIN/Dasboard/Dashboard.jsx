@@ -58,25 +58,25 @@ const AdminDashboard = () => {
     return (
         <>
          <AdmBar />
-            <h1 id='dash'>Dashboard</h1>
+            <h1 id='dashAdmin'>Dashboard</h1>
             <div id="container">
                 <div id="container1">
                 </div>
             </div>
-            <div id="background-dash1">
+            <div id="background-dashAdmin">
                 <div id="greeting1"><span className='bold'>Hello,</span> {User_Name}<br /><span id="greeting2">Nice to have you back, what an exciting day!</span></div>
-                <div id="today_class">Add Student</div>
-                <div id="class_bg1">
+                <div id="addStuHead">Add Student</div>
+                <div id="addStudent">
                     <div id="ad_dash_stu" className='class23' onClick={navigatetostu}>
-                        <span className="circle_name_plus"><span className="plus1">+</span></span>
-                        <span className="class_name1">Add Student</span>
+                        <span className="circle_name_one"><span className="plus1">+</span></span>
+                        <span className="stu_name_one">Add Student</span>
                     </div>
                 </div>
-                <div id="today_class1">Add Faculty</div>
-                <div id="class_bg2">
+                <div id="addFacHead">Add Faculty</div>
+                <div id="addFaculty">
                     <div id="ad_dash_fac" className='class1' onClick={navigatetofac}>
-                        <span className="circle_name"><span className="plus2">+</span></span>
-                        <span className="class_name9">Add Faculty</span>
+                        <span className="circle_name_two"><span className="plus2">+</span></span>
+                        <span className="fac_name_one">Add Faculty</span>
                     </div>
                 </div>
                 <div id="right">
@@ -85,8 +85,8 @@ const AdminDashboard = () => {
                         <img src={profileimg} alt="" id='img' />
                         <div id="student_details"><span className='bold_name'>{User_Name}</span><br/>{gender}<br/>{email}</div>
                     </div>
-                    <div id="updates8">Updates</div>
-                    <div id="card38">
+                    <div id="updatesAdmin">Updates</div>
+                    <div id="cardAdmUpdate">
                                 {updateCdArr.slice(0, 1).map(CreateUpdateDbCard)}
                                 <span id='read-more' onClick={navigatetoAdmupdates}>Read more...</span>
                     </div>

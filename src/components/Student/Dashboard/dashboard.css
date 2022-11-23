@@ -263,7 +263,7 @@ z-index: 999999;
     top: 55vh;
 }
 
-.circle_name {
+/* .circle_name {
     position: absolute;
     height: 5vh;
     width: 2.5vw;
@@ -271,7 +271,7 @@ z-index: 999999;
     border-radius: 50%;
     top: 1.5vh;
     left: 1vw;
-}
+} */
 
 .class_name12 {
     position: absolute;
@@ -401,6 +401,7 @@ color: #000000;
     width:15vw;
     background:none;
     color:rgb(5, 5, 108);
+    cursor: pointer;
 }
 .updateDashCardRow{
     margin-left:1.5vw;

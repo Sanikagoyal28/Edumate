@@ -6,6 +6,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import addStudent from "../../../Assests/Images/addStudent.svg";
  function AddNewDeptComp (){
     const [deptName,setDeptName] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -85,8 +86,8 @@ const config = {
         <button className="cancel_add_dept" onClick={handlePostDeptApi}>Continue</button>
         <button className="done_add_dept" onClick={handleCancelDeptApi}>Cancel</button>
     </div>
- 
  </div>
+ <img src={addStudent} id="addDeptImage" />
  {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer />
     </>

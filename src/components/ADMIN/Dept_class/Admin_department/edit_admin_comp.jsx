@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import AdmBar from "../../admin_bar/AdmBar";
 import * as ReactBootStrap from "react-bootstrap";
 import Instance from "../../../utils/axiosInterceptors";
+import addStudent from "../../../Assests/Images/addStudent.svg";
  function EditDeptComp (){
     const editDeptIdNew = sessionStorage.getItem("editDeptId");
     const editDeptNameNew = sessionStorage.getItem("editDeptName");
@@ -83,6 +84,7 @@ const config = {
         <button className="done_add_dept" onClick={handleCancelEditClassApi}>Cancel</button>
     </div>
  </div>
+ <img src={addStudent} id="addDeptImage" />
  {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer/>
     </>

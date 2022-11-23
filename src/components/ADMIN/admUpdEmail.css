@@ -1,0 +1,76 @@
+.sendOtpAdm{
+    position: absolute;
+width: 25vw;
+height: 20px;
+left: 6.5vw;
+top: 32vh;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 1.1rem;
+line-height: 20px;
+/* identical to box height */
+background:none;
+z-index:10;
+color: #252525;
+display: none;
+}
+#adm_otp_input{
+    box-sizing: border-box;
+    position: absolute;
+    top: 35.5vh;
+    left: 6.5vw;
+    width: 25vw;
+    height: 6vh;
+    opacity: 0.48;
+    padding-left: 1vw;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #212427;
+    display: none;
+}
+.resendOtpAdm{
+    position: absolute;
+    top: 42vh;
+    left: 6.5vw;
+    background: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 20px;
+    color: #212427;
+    text-decoration: underline;
+    cursor: pointer;
+    display: none;
+}
+#adm_otp_btn{
+    position: absolute;
+width: 25vw;
+height: 6vh;
+left: 6.5vw;
+top: 48vh;
+border: none;
+background: #6C63FF;
+border-radius: 8px;
+color: white;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+line-height: 20px;
+font-size: 1.15rem;
+display: none;
+}
+#admUpdEmailImage{
+    position:absolute;
+    top:34vh;
+    left:44.5vw;
+    background: none;
+    height:35vh;
+}

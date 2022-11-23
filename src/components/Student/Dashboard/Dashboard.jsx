@@ -16,7 +16,6 @@ import { Link, useNavigate } from 'react-router-dom';
 const Dashboard = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [Subject, setSubject] = useState('')
     const [gender, setGender] = useState('')
     const [phone, setPhone] = useState('')
     const [dob, setDob] = useState('')

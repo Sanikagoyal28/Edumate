@@ -4,6 +4,7 @@ import { useState ,useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
+import addStudent from "../../Assests/Images/addStudent.svg";
   import 'react-toastify/dist/ReactToastify.css';
 import './add_fac.css'
 const Add_fac = () => {
@@ -26,15 +27,34 @@ const Add_fac = () => {
     else
       document.getElementById('add_stu_input_email').style.outlineColor = 'red'
   }
-  function handleclass(e) {
-    setDepartment(e.target.value)
-  }
-  var accessToken = sessionStorage.getItem('access token')
+  const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+  console.log(adminAccessToken);
   const config = {
-     headers:{
-        Authorization: `Bearer ${accessToken}`
-     }
-  }
+      headers:{
+         Authorization: `Bearer ${adminAccessToken}`
+      }
+   }
+  const [departId, setDepartId] = useState("");
+ function handleDepart(e){
+ setDepartId(e.target.value);
+ }
+
+ console.log(departId)
+ sessionStorage.setItem("Department_Id",departId)
+    const [deptList,setDeptList] = useState([]);
+    useEffect(()=>{
+        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+        .then((res)=>{
+            console.log(res.data);
+            setDeptList(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    },[])
+    console.log(departId)
+
+
   const [loadBool,setLoadBool] = useState(false);
   var data = {name,department,email,DOB}
   function senddata() {
@@ -56,6 +76,13 @@ const Add_fac = () => {
         setLoadBool(false)
       })
   }
+
+  function DropdownDeptList (deptList){
+    return <>
+        <option  id="dept-name" className="dept_head_input" value={deptList.id}>{deptList.name}</option>
+    </>
+         }
+         
   useEffect(()=>{
     if(loadBool)
     document.body.style.opacity="0.5"
@@ -70,13 +97,17 @@ const Add_fac = () => {
         <div id="add_stu_name">Name</div>
         <input type="text" id='add_stu_input_name' onChange={handlename}/>
         <div id="add_stu_dob">D.O.B</div>
-        <input type="date" id='add_stu_input_dob' onChange={handledob} />
+        <input type="date" id='add_stu_input_dob' max="1970-12-30" onChange={handledob} />
         <div id="add_stu_email">Email</div>
         <input type="text" id='add_stu_input_email' onChange={handleemail} />
         <div id="add_stu_department">Department</div>
-        <input type="text" id='add_stu_input_department' onChange={handleclass} />
+        <select id='add_stu_input_department' onChange={handleDepart}>
+        <option>Departments</option>
+        {deptList.map(DropdownDeptList)}
+        </select>
         
         <button onClick={senddata} id='add_stu_btn'>Done</button>
+        <img src={addStudent} id="addStudentImage" />
       </div>
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       <ToastContainer />

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import './add_stu.css'
+import addStudent from "../../Assests/Images/addStudent.svg";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 const Add_stu = () => {
@@ -12,7 +13,7 @@ const Add_stu = () => {
   const [name, setName] = useState('')
   const [DOB, setDob] = useState('')
   const [email, setEmail] = useState('')
-  const [class_id, setClassId] = useState('')
+  // const [class_id, setClassId] = useState('')
   const rightemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   function handlename(e) {
     // if (name.length >= 6)
@@ -31,17 +32,36 @@ const Add_stu = () => {
     else
       document.getElementById('add_stu_input_email').style.outlineColor = 'red'
   }
-  function handleclass(e) {
-    setClassId(e.target.value)
-  }
-  var accessToken = sessionStorage.getItem('access token')
+  // function handleclass(e) {
+  //   setClassId(e.target.value)
+  // }
+  const adminAccessToken = sessionStorage.getItem("Admin_access_token");
+  console.log(adminAccessToken);
   const config = {
-    headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
-  }
+      headers:{
+         Authorization: `Bearer ${adminAccessToken}`
+      }
+   }
+
+  const [classList,setClassList] = useState([]);
+
+  useEffect(()=>{
+    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+"ALL/",config).
+    then((res)=>{
+        console.log(res.data);
+        setClassList(res.data)
+    }).catch((err)=>{
+        console.log(err);
+    })
+  },[])
+  
+   const [classId, setClassId] = useState("");
+  
+   function handleClass(e){
+      setClassId(e.target.value);
+   }
   const [loadBool, setLoadBool] = useState(false);
-  var data = { name, class_id, email, DOB }
+  var data = { name, classId, email, DOB }
   function senddata() {
     setLoadBool(true)
     axios.post('https://erp-edumate.herokuapp.com/api/user/admin/addstudent/', data, config)
@@ -64,6 +84,13 @@ const Add_stu = () => {
         setLoadBool(false)
       })
   }
+
+  function DropDownClassList (classList){
+    return <>
+         <option  id="class-name" className="class_head_input" value={classList[0]}>{classList[0]}</option>
+    </>
+}
+
   useEffect(() => {
     if (loadBool)
       document.body.style.opacity = "0.5"
@@ -79,21 +106,16 @@ const Add_stu = () => {
         <div id="add_stu_name">Name</div>
         <input type="text" id='add_stu_input_name' onChange={handlename} />
         <div id="add_stu_dob">D.O.B</div>
-        <input type="date" id='add_stu_input_dob' onChange={handledob} />
+        <input type="date" id='add_stu_input_dob' max="2002-12-23" onChange={handledob} />
         <div id="add_stu_email">Email</div>
         <input type="email" id='add_stu_input_email' onChange={handleemail} />
         <div id="add_stu_class_id">Class Id</div>
-        <input type="text" id='add_stu_input_id' onChange={handleclass} />
-        {/* <select name="" id="add_stu_select">
-          <option value="">S1</option>
-          <option value="">S2</option>
-          <option value="">S3</option>
-          <option value="">S4</option>
-          <option value="">S5</option>
-          <option value="">S6</option>
-        </select> */}
-
+        <select id='add_stu_input_id' onChange={handleClass}>
+        <option>Classes</option>
+        {classList.map(DropDownClassList)}
+        </select>
         <button onClick={senddata} id='add_stu_btn'>Done</button>
+        <img src={addStudent} id="addStudentImage" />
       </div>
       {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
       </div>

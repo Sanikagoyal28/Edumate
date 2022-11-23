@@ -6,7 +6,7 @@
    margin-top: 13vh;
     border-radius: 10px;
     background-color: white;
-    z-index: 1234;
+    z-index: 5;
 }
 
 #assign_fac_heading_box {
@@ -164,6 +164,7 @@ left:25.5vw;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
     padding-top: 0.5vh;
+    cursor: pointer;
 }
 #time-day-row{
     position: absolute;
@@ -182,5 +183,137 @@ left:25.5vw;
 }
 #row-time{
     position:absolute;
-    top:20vh;
+    top:70vh;
+    left:25.5vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 22px;
+    background: none;
+}
+#row-day{
+    position:absolute;
+    top:70vh;
+    left:50vw;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 22px;
+    background: none;
+}
+#black-rule{
+    color:black;
+    z-index:7;
+    position:absolute;
+    top:74vh;
+    left:25.5vw;
+}
+.dateTimeRow{
+width: 46vw;
+height: 8vh;
+background: #EEF1FF;
+border-radius: 8px;
+margin-left:1.1vw;
+padding-top: 1vh;
+}
+.setTime{
+    background-color: white;
+    width:15vw;
+    height: 6vh;
+    /* text-align: center; */
+    padding:0.8vh 2vw;
+    /* padding-top:0.4vh; */
+    border-radius: 8px;
+    margin-left: 2vw;
+}
+.setDay{
+    background-color: white;
+    width:10vw;
+    height:4.5vh;
+    padding:0.8vh 3vw;
+    border-radius: 8px;
+    margin-left:10.5vw;
+}
+.facultyBackground{
+    background-color: white;
+    margin-top:18vh;
+    margin-left:30vw;
+    width:55vw;
+    height:80vh;
+    padding-top: 2vh;
+    border-radius: 15px;
+}
+.departName{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 22px;
+    margin-left:1.5vw;
+    background:none;
+}
+.departInput, .classInput , .facultyInput , .subjectInput , .timeInput , .dayInput{
+    box-sizing: border-box;
+    position: absolute;
+    width: 19vw;
+    height: 5vh;
+    margin-left: 1.5vw;
+    top: 23vh;
+    padding-left: 5px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}
+.classsname , .facultyName , .subjectName, .timeSlot , .daySlot{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 22px;
+    margin-left:1.5vw;
+    background:none;
+}
+.classInput{
+    top: 33.7vh;
+}
+.facultyInput{
+     top:44.3vh;
+}
+.subjectInput{
+    top:55vh;
+}
+.timeInput{
+    top:65.8vh;
+}
+.dayInput{
+    top:76.5vh;
+}
+.assignSaveButton{
+    box-sizing: border-box;
+    position: absolute;
+    left: 70.5vw;
+    top: 85vh;
+    text-align: center;
+    width:6vw;
+    height:5vh;
+    background: #6C63FF;
+    color:white;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    padding-top: 0.3vh;
+}
+.assignCancelButton{
+    box-sizing: border-box;
+    position: absolute;
+    left: 77vw;
+    top: 85vh;
+    width:6vw;
+    padding-top: 0.3vh;
+    text-align: center;
+    height:5vh;
+    background: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
 }

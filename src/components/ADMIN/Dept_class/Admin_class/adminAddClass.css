@@ -6,7 +6,7 @@
 .addInnerBlockClass{
     position: absolute;
 width: 53vw;
-height: 70vh;
+height: 74vh;
 left: 9vw;
 top: 10vh;
 background: #FFFFFF;
@@ -191,4 +191,12 @@ margin-right:5vw;
     background:none;
     padding-left:10px;
     /* padding-top:1vh; */
+}
+#addClassImage{
+    background: none;
+    width:34vw;
+    height:35vh;
+    position:absolute;
+    top: 41.5vh;
+    left:52vw;
 }

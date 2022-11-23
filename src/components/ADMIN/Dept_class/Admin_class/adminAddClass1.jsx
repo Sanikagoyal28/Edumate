@@ -9,6 +9,7 @@ import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import * as ReactBootStrap from "react-bootstrap";
+import addStudent from "../../../Assests/Images/addStudent.svg";
  function AddNewClassComp (){
     const [classId,setClassId] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -50,18 +51,15 @@ const config = {
  const [deptList,setDeptList] = useState([]);
  const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
-        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res)
-            setLoadBool(false)
             console.log(res.data);
             setDeptList(res.data);
             console.log(res.data[1]);
         })
         .catch((err)=>{
             console.log(err);
-            setLoadBool(false)
             toast.error(err.response.data.id[0],{
                 position: "top-center",
               })
@@ -89,19 +87,15 @@ return <>
         })
     }
     function handleCancelClassApi(){
-        setLoadBool(true)
         axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL",config).
         then((res)=>{
             console.log(res.data);
-            setLoadBool(false)
             setAdminClAdd(AdminClAdd);
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
-            setLoadBool(false)
         })
     }
-
     return <>
     <AdmBar />
  <div className="updateOuterClassDiv">
@@ -124,6 +118,7 @@ return <>
         </select>
     </div>
  </div>
+ <img src={addStudent} id="addClassImage" />
  {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer />
     </>

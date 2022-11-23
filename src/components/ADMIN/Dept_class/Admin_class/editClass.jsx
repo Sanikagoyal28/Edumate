@@ -6,6 +6,8 @@ import "./adminAddClass.css";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import addStudent from "../../../Assests/Images/addStudent.svg";
+import * as ReactBootStrap from "react-bootstrap";
  function EditClassComp (){
     // const editDeptId =sessionStorage.getItem("EditDeptId");
 const editYear= sessionStorage.getItem("EditClassYear");
@@ -47,17 +49,20 @@ const config = {
     section:secName,
     id:classId
  }
-   
+   const [loadBool, setLoadBool] = useState(false)
  const navigate = useNavigate();
     function handlePostEdClassApi(){
         console.log("ahsj,")
+        setLoadBool(true)
         axios.put("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+classId+"/",addDeptInfo,config).
         then((res)=>{
             console.log(res.data);
+            setLoadBool(false)
             setAdminClAdd(AdminClAdd=>[...AdminClAdd,addDeptInfo])
             navigate("/adminAdd")
         }).catch((err)=>{
             console.log(err);
+            setLoadBool(false)
         })
     }
     const [deptList,setDeptList] = useState([]);
@@ -116,6 +121,8 @@ const config = {
         </select>
     </div>
  </div>
+ <img src={addStudent} id="addClassImage" />
+ {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
  <ToastContainer />
     </>
  }

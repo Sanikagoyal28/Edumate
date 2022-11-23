@@ -6,13 +6,13 @@
 
 .updateEmail {
     position: absolute;
-    top: 22vh;
+    top: 19vh;
     left: 6.5vw;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     background: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 20px;
     color: #252525;
     height: 4vh;
@@ -21,7 +21,7 @@
 .CHNGEMAIL{
     background-color: #ffffff;
     position: absolute;
-    width: 68vw;
+    width: 65vw;
     height: 70vh;
     left: 25vw;
     top: 18vh;
@@ -31,10 +31,10 @@
 .emailInput {
     box-sizing: border-box;
     position: absolute;
-    top: 26vh;
+    top: 22.5vh;
     left: 6.5vw;
     width: 45vw;
-    height: 6vh;
+    height: 5.7vh;
     opacity: 0.48;
     padding-left: 1vw;
     border: 1px solid #000000;
@@ -65,9 +65,9 @@
     position: absolute;
     font-family: 'Montserrat';
     width: 6vw;
-    height: 6vh;
-    left: 53.5vw;
-    top: 26vh;
+    height: 5.7vh;
+    left: 53vw;
+    top: 22.5vh;
     border: none;
     background: #6C63FF;
     border-radius: 8px;
@@ -106,23 +106,7 @@
     color: #212427;
 
 }
-#send_otp_info{
-    position: absolute;
-width: 25vw;
-height: 20px;
-left: 6.5vw;
-top: 38vh;
-display: none;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 1.1rem;
-line-height: 20px;
-/* identical to box height */
-background-color: white;
 
-color: #252525;
-}
 #wrongUpdEmail{
     position: absolute;
     width: 351px;

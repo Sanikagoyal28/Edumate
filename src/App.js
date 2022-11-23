@@ -46,6 +46,7 @@ import AdmUpdateEmail from "./components/ADMIN/AdmUpdateEmail";
 
 import FacChangepass from "./components/Faculty/Fac_Change_pass/Changepass";
 import AdmChangepass from "./components/ADMIN/admin_Change_pass/Changepass";
+import FacultyClass from "./components/ADMIN/Assign_fac/assign-fac-page";
 
 function App() {
 
@@ -75,11 +76,7 @@ function App() {
           <Route path="/logout" exact element={<Logout />} />
           <Route path="/f_atten1" exact element={<FAttendance1/>} />
         <Route path="/f_atten2" exact element={<FAttendance2/>} />
-      {/* <Route path="/stAttendance" exact element={<Attendance />} /> */}
-      {/* <Route path="/stAttend" exact element={<SubjectAttend />} /> */}
-     
-      {/* <Route path="/loadingscreen" exact element={<LoadingScreen />} /> */}
-    
+
     {otpToPwd?(<Route path="/rstPwd" exact element={<ResetPwd /> }/>) :(null)}
       <Route path="/admAttendance" exact element={<AdmAttend />} />
       {/* <Route path="/chngPwd" exact element={<Changepass />} /> */}
@@ -146,6 +143,7 @@ function App() {
                 {loggedInUser==9?( <Route path="/ad_feedback" exact element={<Ad_feed/>} />):(null)}
                 {loggedInUser==9?(<Route path="/admUpdateEmail" exact element={<AdmUpdateEmail />}/>):(null)}
                 {loggedInUser==9?(<Route path="/admChngPwd" exact element={<AdmChangepass/>}/>):(null)}
+               {loggedInUser==9?(<Route path="/assignClassToFac" exact element={<FacultyClass/>}/>):(null)}
 
         </Routes> 
         </BrowserRouter>
