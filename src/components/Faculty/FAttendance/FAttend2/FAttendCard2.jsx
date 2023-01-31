@@ -16,16 +16,17 @@ props.absentFunc()
     }
     var a = props.present
    
-    // useEffect(()=>{
-    //     if(a){
-    //         document.getElementsByClassName("present1")[props.index].style.backgroundColor = "#62DDB0";
-    //         document.getElementsByClassName("absent1")[props.index].style.backgroundColor = "white";
-    //     }
-    //     else{
-    //         document.getElementsByClassName("present1")[props.index].style.backgroundColor = "white";
-    //         document.getElementsByClassName("absent1")[props.index].style.backgroundColor = "#FF939E";
-    //     }
-    // },[a])
+    useEffect(()=>{
+        if(a){
+            document.getElementsByClassName("present1")[props.index].style.backgroundColor = "#62DDB0";
+            document.getElementsByClassName("absent1")[props.index].style.backgroundColor = "white";
+        }
+        else{
+            document.getElementsByClassName("present1")[props.index].style.backgroundColor = "white";
+            document.getElementsByClassName("absent1")[props.index].style.backgroundColor = "#FF939E";
+        }
+    },[a])
+    
     return <>
         <div className="FCardRow">
             {/* <span id="FCdRoll">{props.roll}</span> */}

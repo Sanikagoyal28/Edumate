@@ -9,6 +9,9 @@ import { useEffect } from "react";
 import axios from "axios";
 import Navbar from '../../../utils/Navbar/Navbar'
 import BaseUrl from "../../../utils/BaseUrl";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function FAttendance2() {
 
     const time = sessionStorage.getItem("fac_attend_time")
@@ -22,7 +25,6 @@ function FAttendance2() {
             Authorization: `Bearer ${accessToken}`
         }
     }
-    const [newArr,setNewArr] = useState([])
     const [object,setObject] = useState({});
     const [putArray, setPutArray] = useState([])
     const [marked, setIsMarked] = useState(false)
@@ -31,18 +33,14 @@ function FAttendance2() {
             .then((res) => {
                 console.warn(res);
                 setLoadBool(false)
-                // console.log(res.data[0])
                 setObject(res.data[0]);
                 // setPutArray(oldARRAY=>[oldARRAY,res.data[0]])
                 var x = res.data.splice(0,1)
-                console.log(x)
                 setIsMarked(x[0].marked)
-                console.log(x[0].marked)
                 setAttendFacArray(res.data)
                 setAttendFacArrayId(res.data)
             })
             .catch((err) => {
-                console.warn(err);
                 setLoadBool(false)
             })
     }, [])
@@ -51,47 +49,44 @@ function FAttendance2() {
     function handleMarkPresent(Name,Id,Mark){
         console.log(Mark)
 Mark=true;
-console.log(Id)
 var dataSend={
     name:Name,
     userID:Id,
     is_present:Mark
 };
-console.log(dataSend)
 setPutArray([...putArray, dataSend])
     }
 
     function handleMarkAbsent(Id, Name,Mark){
         console.log(Mark)
 Mark=false;
-console.log(Id)
 var dataSend={
     name:Name,
     userID:Id,
     is_present:Mark
 };
-console.log(dataSend)
 setPutArray([...putArray, dataSend])
     }
 
-    // function CreateFAttendCard2(attendFacArray) {
-    //     return (
-    //         <>
-    //        >
-    //     )
-    // }
-    // var test = 0
-    // function toggleAttend2(attendFacArrayid) {
-    //     test++;
-    //     console.log(test);
-    //     return (
-    //         <>
-    //             <ToggleAttend userid={attendFacArrayid.userID} />
-    //         </>
-    //     )
-    // }
     const [loadBool, setLoadBool] = useState(true)
-    console.warn(putArray)
+    // console.warn(putArray)
+
+   function handleAttendanceMark(){
+
+    console.log(putArray)
+    BaseUrl.put('teacher/TakeStudentsAttendance/'+date+'/'+id+'/'+time+'/', putArray, config)
+    .then((res)=>{
+        console.log(res)
+        toast.success(res.data.msg, {
+            position: "top-center",
+            background: "none"
+         })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+   }
+
     return <>
         <Navbar />
         <h1 className="dbAttend" id="DBAttend">Dashboard : Attendance </h1>
@@ -112,8 +107,9 @@ setPutArray([...putArray, dataSend])
 
                 })}
             </div>
-            {/* <div className="facAttendanceButton" onClick={()=>{handleAttendanceMark()}} type="button">Done</div> */}
+            <div className="facAttendanceButton" onClick={()=>{handleAttendanceMark()}} type="button">Done</div>
         </div>
+        <ToastContainer />
         {loadBool ? (<ReactBootStrap.Spinner animation="border" id="apiloader" />) : null}
     </>
 }

@@ -4,7 +4,8 @@ import avatar from "../../Assests/Images/avatar.png";
 import ProfileInputField from "../../utils/ProfileInputField"
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
 import * as ReactBootStrap from "react-bootstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
@@ -179,6 +180,10 @@ const [show3,setShow3] = useState(false);
          pincode:profilePin,
          picture :profileImage
       },config).then((res)=>{
+         toast.success("Profile edited successfully", {
+            position: "top-center",
+            background: "none"
+         })
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
@@ -306,6 +311,7 @@ const isnum = /^\d+$/;
                 {editAble?(<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />): 
                    (<ProfileInputDisabled  value={profileName} class="profileField" type="text"/>)}
                 </div> 
+                <p id="wrongName">Name must contain only alphabetic characters.</p>
                 <div id="sex">Sex</div>
                 <div className='space2'>
                 {editAble?( <select className="dropdownGender" value={profileSex} onChange={handleEditPSex}>
@@ -322,6 +328,7 @@ const isnum = /^\d+$/;
                 {editAble?(<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />): 
                    (<ProfileInputDisabled  value={profileBG} class="profileField" type="text"/>)}
                 </div>
+                <p id="wrongBG">Please enter a valid Blood Group</p>
                 <div id="dob">Date of Birth</div>
                 <div className='space4'>
                 {editAble?(<ProfileInputField value={profileDOB} class="profileField" type="text" onChange={handleEditPDOB} />): 
@@ -332,6 +339,7 @@ const isnum = /^\d+$/;
                 {editAble?(<input value={profileEmail} class="profileField" type="date" onChange={handleEditPEmail} disabled/>): 
                    (<input  value={profileEmail} class="profileField" type="date" disabled/>)}
                 </div>
+                <p id="wrongEmail">Please enter a valid Email address</p>
                 <div id="heading2">Contact Details</div>
                 <div id="address">Address</div>
                 <div className='space6'>
@@ -343,16 +351,19 @@ const isnum = /^\d+$/;
                 {editAble?(<ProfileInputField value={profileCity} class="profileField" type="text" onChange={handleEditPCity} />): 
                    (<ProfileInputDisabled  value={profileCity} class="profileField" type="text"/>)}
                 </div>
+                <p id="wrongCity">Please enter a valid City name</p>
                 <div id="state">State</div>
                 <div className='space8'>
                 {editAble?(<ProfileInputField value={profileState} class="profileField" type="text" onChange={handleEditPState} />): 
                    (<ProfileInputDisabled  value={profileState} class="profileField" type="text"/>)}
                 </div>
-                <div id="stu-phone">Student's Mobile No.</div>
+                <p id="wrongState">Please enter a valid State name</p>
+                <div id="stu-phone">Mobile No.</div>
                 <div className='space9'>
                 {editAble?(<ProfileInputField value={profileMobile} class="profileField" type="text" onChange={handleEditPMobile} />): 
                    (<ProfileInputDisabled  value={profileMobile} class="profileField" type="text"/>)}
                 </div>
+                <p id="wrongNum">Number must contain only numeric characters.</p>
                 <div id="pin">Pincode</div>
                 <div className='space10'>
                 {editAble?(<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />): 
@@ -365,6 +376,7 @@ const isnum = /^\d+$/;
             </div>
             </div>
             {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+            <ToastContainer />
         </>
     )
 }
