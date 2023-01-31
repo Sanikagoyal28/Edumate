@@ -9,6 +9,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
 
 function ResetPwd() {
   const [pass, setPass] = useState("");
@@ -61,8 +62,8 @@ const [navRstToLogin, setNavRstToLogin] = useState(false)
     var data={email,otp,password:pass,confirmpassword:Cpass};
       if (isPass && isCPass && pass===Cpass) {
         setLoadBool(true)
-        axios
-          .post("https://erp-edumate.herokuapp.com/api/user/changepassword/",data)
+        BaseUrl
+          .post("changepassword/",data)
           .then((res) => {
             console.log(res.data);
             toast.success(res.data.msg,{

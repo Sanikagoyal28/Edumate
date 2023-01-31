@@ -8,6 +8,7 @@ import './add_stu.css'
 import addStudent from "../../Assests/Images/addStudent.svg";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import BaseUrl from '../../utils/BaseUrl';
 const Add_stu = () => {
   const navigate = useNavigate()
   const [name, setName] = useState('')
@@ -46,7 +47,7 @@ const Add_stu = () => {
   const [classList,setClassList] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+"ALL/",config).
+    BaseUrl.get("admin/classesindepartment/"+"ALL/",config).
     then((res)=>{
         console.log(res.data);
         setClassList(res.data)
@@ -64,7 +65,7 @@ const Add_stu = () => {
   var data = { name, classId, email, DOB }
   function senddata() {
     setLoadBool(true)
-    axios.post('https://erp-edumate.herokuapp.com/api/user/admin/addstudent/', data, config)
+    BaseUrl.post('admin/addstudent/', data, config)
       .then((res) => {
         console.log(res);
         toast.success(res.data.msg,{

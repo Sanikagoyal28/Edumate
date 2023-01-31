@@ -6,6 +6,7 @@ import "../../Student/TimeTable/TimeTable.jsx";
 import Navbar from "../../utils/Navbar/Navbar.jsx";
 import * as ReactBootStrap from "react-bootstrap";
 import "./fTimeTable.css";
+import BaseUrl from "../../utils/BaseUrl.jsx";
  function FTimeTable (){
     const facAccessToken = sessionStorage.getItem("Faculty_access_token");
 console.log(facAccessToken);
@@ -23,7 +24,7 @@ const config = {
 const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/timetable/",config).
+        BaseUrl.get("teacher/timetable/",config).
         then((res)=>{
             console.log(res)
             setLoadBool(false)
@@ -66,7 +67,7 @@ const [loadBool,setLoadBool] = useState(false)
     return <>
     <Navbar />
      <h1 className="dbTT">Dashboard : Time Table </h1>
-    <div className="FTimeTable">
+    <div className="timeTable">
     <table cellSpacing={0} className="tableNew">
             <tr><td className="timetableRow" colspan={7}>Time Table</td></tr>
             <tr className="tableRow">

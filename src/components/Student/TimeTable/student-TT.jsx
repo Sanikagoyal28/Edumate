@@ -6,6 +6,7 @@ import Navbar from "../../utils/Navbar/Navbar";
 import TimeT from "./TimeTable";
 import * as ReactBootStrap from "react-bootstrap";
 import "./TT.css" ;
+import BaseUrl from "../../utils/BaseUrl";
  function Timetable (){
    const accessToken = sessionStorage.getItem("access token");
    console.log(accessToken);
@@ -21,7 +22,7 @@ import "./TT.css" ;
 const [loadBool,setLoadBool] = useState(false)
    useEffect(()=>{
       setLoadBool(true)
-      axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/",config).
+      BaseUrl.get("student/timetable/",config).
       then((res)=>{
           console.log(res.data);
           setLoadBool(false)

@@ -1,4 +1,4 @@
-#background-feedback {
+/* #background-feedback {
     position: absolute;
     height: 150vh;
     width: 67vw;
@@ -110,25 +110,20 @@ line-height: 20px;
     position: absolute;
     height: 10vh;
     width: 70vw;
-    /* background-color: rgba(240, 240, 240); */
+   
     background-color: white;
     border-radius: 10px;
 }
-/* #faculty-list:hover{
-    background-color: #4D4D4D;
-}
-#faculty-list:hover{
-    background-color: #4D4D4D;
-} */
+
 
 #fac-area{
     display:flex;
     flex-direction: column;
     margin-top:25vh;
     width: 70vw;
-    /* top: 30vh; */
+   
     background:none;
-    /* left: 1.5vw; */
+ 
     border-radius: 10px;
 }
 #fac-details{
@@ -162,11 +157,11 @@ line-height: 20px;
     left: 58vw;
 }
 .ratings{
-    /* padding: 50%; */
+   
     background: none;
     color: black;
     font-size: 0.9rem;
 }
 .emailbutton{
     color: white;
-}
+} */

@@ -9,6 +9,7 @@ import UpdateCard from "../../Student/Updates/updateCard";
 import axios from "axios";
 import Navbar from "../../utils/Navbar/Navbar";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
  function FUpdate(){
 const facAccessToken = sessionStorage.getItem("Faculty_access_token");
 console.log(facAccessToken);
@@ -22,7 +23,7 @@ const [updateFCdArr,setUpdateFCdArr]=useState([]);
 const [loadBool,setLoadBool] = useState(false)
 useEffect(()=>{
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         setLoadBool(false)
         console.log(res.data[0]);

@@ -7,6 +7,7 @@ import AddClassField from "./classInputField";
 import * as ReactBootStrap from "react-bootstrap"
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import BaseUrl from "../../../utils/BaseUrl";
 function AdminClComponent (){
 
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
@@ -28,7 +29,7 @@ function AdminClComponent (){
 
     useEffect(()=>{
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL/",{
+        BaseUrl.get("admin/classes/"+"ALL/",{
             headers:{
                 Authorization: `Bearer ${adminAccessToken}`
              }}).
@@ -72,8 +73,8 @@ navigate("/editClass");
     }
     function handleDltClass(id){
         console.log(id);
-        const url = `https://erp-edumate.herokuapp.com/api/user/admin/classes/`;
-        axios.delete((url+id),{
+        const url = `admin/classes/`;
+        BaseUrl.delete((url+id),{
             headers:{
                Authorization: `Bearer ${adminAccessToken}`
             }

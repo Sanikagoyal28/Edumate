@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
 function EditUpdateCard (props){
 
     const EditCardTitle = sessionStorage.getItem("EditUpdatesTitle");
@@ -44,7 +45,7 @@ const config = {
 function handleDoneNCdApi(){
     console.log("ahsj,")
     setLoadBool(true)
-    axios.put("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",nCard,config).
+    BaseUrl.put("updatesection/0/",nCard,config).
     then((res)=>{
         console.log(res.data);
         setLoadBool(false)
@@ -58,7 +59,7 @@ function handleDoneNCdApi(){
 const navigate = useNavigate();
 function handleCancelNCdApi(){
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         console.log(res.data);
         setLoadBool(false)

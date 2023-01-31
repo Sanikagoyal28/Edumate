@@ -7,6 +7,7 @@ import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import Navbar from "../../utils/Navbar/Navbar";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
  function Attendance(){
 
     const accessToken = sessionStorage.getItem("access token");
@@ -20,7 +21,7 @@ import * as ReactBootStrap from "react-bootstrap";
     const [SAttend1Array,setAttend1Array]= useState([]);
     useEffect(()=>{
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentoverallattendance/",config)
+        BaseUrl.get("student/studentoverallattendance/",config)
         .then((res)=>{
             console.log(res);
             setLoadBool(false)

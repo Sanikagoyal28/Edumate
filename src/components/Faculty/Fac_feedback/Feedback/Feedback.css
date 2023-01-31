@@ -1,4 +1,4 @@
-/* #background-feedback {
+#background-feedback {
     position: absolute;
     height: 150vh;
     width: 73vw;
@@ -30,35 +30,32 @@
     display: flex;
     justify-content: space-evenly;
     position: absolute;
-    height: 12vh;
+    height: 9vh;
     width: 70vw;
-    top: 16vh;
+    top: 14vh;
     left: 1.6vw;
     background-color: rgba(240, 240, 240);
     border-radius: 10px;
+    padding-top:3vh;
 }
 
 .heading-1 {
-    background-color: rgba(240, 240, 240);
+    background:none;
     color: #4D4D4D;
-width: 8vw;
-height: 5vh;
-margin-top: 5vh;
-
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
 font-size: 1.1rem;
 line-height: 20px;
+position:absolute;
+left:6vw;
 }
 
 .heading-2 {
-    background-color: rgba(240, 240, 240);
+  background: none;
     color: #4D4D4D;
-width: 8vw;
-height: 5vh;
-margin-top: 5vh;
-
+position:absolute;
+left:23vw;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -67,20 +64,81 @@ line-height: 20px;
 }
 
 .heading-3 {
-    background-color: rgba(240, 240, 240);
+    background:none;
     color: #4D4D4D;
-width: 8vw;
-height: 5vh;
-margin-top: 5vh;
-
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+position:absolute;
+left:50vw;
+}
+.feedBackCall{
+    background: none;
+    display:flex;
+    flex-direction: column;
+    margin-top:27vh;
+    position:absolute;
+left:1.6vw;
+}
+.feedCard{
+    width:70vw;
+    height:10vh;
+    background-color: #EEF1FF;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+margin-bottom: 2vh;
+padding-top:3.5vh;
+}
+#feedName{
+    background:none;
+    color: #4D4D4D;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+position:absolute;
+left:6vw;
+}
+#feedSubj{
+    background: none;
+    color: #4D4D4D;
+position:absolute;
+left:23vw;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
 font-size: 1.1rem;
 line-height: 20px;
 }
-
-.heading-4 {
+#feedBackCircles{
+    background:none;
+    color: #4D4D4D;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 1.1rem;
+line-height: 20px;
+position:absolute;
+left:50vw;
+}
+.circleF{
+    height:5vh;
+    width:20vw;
+    border-radius: 50%;
+    background-color: white;
+    color:black;
+    padding:1.2vh 1.15vw;
+    margin-right:0.5vw;
+cursor: pointer;
+}
+/* .heading-4 {
     background-color: rgba(240, 240, 240);
     color: #4D4D4D;
 width: 8vw;
@@ -106,7 +164,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 1.1rem;
 line-height: 20px;
-}
+} */
 #faculty-list{
     display: flex;
     justify-content: space-evenly;
@@ -162,4 +220,4 @@ line-height: 20px;
 }
 .emailbutton{
     color: white;
-} */
+}

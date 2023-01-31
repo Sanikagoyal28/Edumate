@@ -126,12 +126,54 @@ color: #000000;
     background-color: white;
     color: #000000;
 }
-#wrongName {
+#wrongName , #wrongBG , #wrongEmail , #wrongCity ,#wrongState ,#wrongFName , #wrongMName , #wrongNum , #wrongFNum , #wrongMNum , #wrongPin{
+    background: none;
     position:absolute;
-    top:36vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size:12.5px;
+    top:31.5vh;
+    font-weight: 500;
     left:38vw;
-    width:20vw;
-    color:rgba(255,0,0,0.7)
+    width:28vw;
+    color:rgba(255,0,0,0.9);
+    display:none;
+}
+#wrongBG{
+    top:48vh;
+}
+#wrongEmail{
+    top:58vh;
+}
+#wrongCity{
+    top:89vh;
+    z-index:30;
+    color:rgba(255,0,0);
+}
+#wrongState{
+    top:96.7vh;
+    z-index:30;
+    color:rgba(255,0,0);
+}
+#wrongFName{
+    top:130.3vh;
+}
+#wrongMName{
+    top:146.5vh;
+}
+#wrongNum{
+top:104.5vh;
+z-index:30;
+color:rgba(255,0,0);
+}
+#wrongFNum{
+top:138.2vh;
+}
+#wrongMNum{
+top:154vh;
+}
+#wrongPin{
+    top:110vh;
 }
 #sex {
     background-color: white;
@@ -560,7 +602,7 @@ cursor: pointer;
 /* @media (max-width:940px) {
     #background {
         width:72vw;
-    }
+    }fwron
     .space1 , .space2 , .space3 , .space4 , .space5 ,.space6 , .space7 , .space8 , .space9 , .space11 , .space10 {
         left:45vw;
     }

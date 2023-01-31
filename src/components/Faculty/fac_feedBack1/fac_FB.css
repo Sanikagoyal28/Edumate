@@ -1,0 +1,53 @@
+.feedBackBgOne{
+    position:absolute;
+    left:28vw;
+    top:15vh;
+    background-color: white;
+    height:55vh;
+    width:60vw;
+    border-radius: 10px;
+}
+.studentFeed{
+    background:none;
+    position: absolute;
+    width: 25vw;
+    height: 8vh;
+    left: 2vw;
+    top: 3vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 37px;
+
+    color: #000000;
+}
+.feedBck1Class{
+    position: absolute;
+    height: 8vh;
+    width: 57vw;
+    top: 13vh;
+    left: 1.6vw;
+    background-color: rgba(240, 240, 240);
+    border-radius: 10px;
+    padding-top:1.5vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 37px;
+    text-align: center;
+}
+.departFeed{
+    box-sizing: border-box;
+    position:absolute;
+    top:24vh;
+    left:2vw;
+    height:10vh;
+    width:10vw;
+    background: #EEF1FF;
+ 
+    padding-left: 5px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+}

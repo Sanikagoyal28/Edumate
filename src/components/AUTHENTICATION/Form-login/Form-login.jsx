@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import * as ReactBootStrap from "react-bootstrap";
 import Instance from "../../utils/axiosInterceptors";
+import BaseUrl from "../../utils/BaseUrl";
 // import instance from "../API";
 // import useRefreshToken from "../refreshToken";
 // import axiosInstance from "../utils/axiosInstance";
@@ -114,8 +115,8 @@ const userIdFirstDigit = String(userID)[0];
     if (iscorrectid) {
       setPlayLoad(!playLoad)
       setLoadBool(true)
-    axios
-        .post("https://erp-edumate.herokuapp.com/api/user/login/", data)
+    BaseUrl
+        .post("login/", data)
          .then((res) => {
           toast.success("Login Succcessful",{
             position: "top-center",
@@ -149,7 +150,7 @@ sessionStorage.setItem("Route_to_login",routeToLogin);
            
               navigate("/facDashboard")
               console.log("aDBHMASHF");
-              sessionStorage.setItem("Faculty_userId",userID)
+              // sessionStorage.setItem("Faculty_userId",userID)
               sessionStorage.setItem("Faculty_access_token", accessToken);
               console.log(accessToken)
             }

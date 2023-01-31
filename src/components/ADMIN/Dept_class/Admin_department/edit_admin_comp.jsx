@@ -8,6 +8,7 @@ import AdmBar from "../../admin_bar/AdmBar";
 import * as ReactBootStrap from "react-bootstrap";
 import Instance from "../../../utils/axiosInterceptors";
 import addStudent from "../../../Assests/Images/addStudent.svg";
+import BaseUrl from "../../../utils/BaseUrl";
  function EditDeptComp (){
     const editDeptIdNew = sessionStorage.getItem("editDeptId");
     const editDeptNameNew = sessionStorage.getItem("editDeptName");
@@ -36,7 +37,7 @@ const config = {
     function handlePostEditClassApi(){
         setLoadBool(true)
         console.log("ahsj,");
-        axios.put("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+deptId+"/",addDeptInfo,config).
+        BaseUrl.put("admin/departments/"+deptId+"/",addDeptInfo,config).
         then((res)=>{
             console.log(res.data);
             setLoadBool(false)
@@ -53,8 +54,8 @@ const config = {
     }
     function handleCancelEditClassApi(){
         setLoadBool(true)
-        const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/";
-        axios.get(url+"ALL",{
+        const url = "admin/departments/";
+        BaseUrl.get(url+"ALL",{
             headers:{
                 Authorization: `Bearer ${adminAccessToken}`
              }}).

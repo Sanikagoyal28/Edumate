@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import BaseUrl from '../../utils/BaseUrl';
 const StudChangepass = () => {
     const [pass, setPass] = useState("");
     function handlepass(e) {
@@ -75,7 +76,7 @@ function handleUpdatePassword(){
   
     if (isPass && isCPass && pass===Cpass) {
       setLoadBool(true)
-        axios.post("https://erp-edumate.herokuapp.com/api/user/updatepassword/",data,config).then((res)=>{
+        BaseUrl.post("updatepassword/",data,config).then((res)=>{
             console.log(res);
             toast.success(res.data.msg,{
               position: "top-center",

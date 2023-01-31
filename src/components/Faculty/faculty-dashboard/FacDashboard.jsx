@@ -12,6 +12,7 @@ import { useState } from 'react'
 import Classcard1 from './Classcard'
 import Navbar from '../../utils/Navbar/Navbar'
 import { Link,useNavigate } from 'react-router-dom';
+import BaseUrl from '../../utils/BaseUrl';
 const FacDashboard = () => {
     const navigate = useNavigate()
     const [name, setName] = useState('')
@@ -34,7 +35,7 @@ const FacDashboard = () => {
     const [updateCdArr,setUpdateCdArr]=useState([]);
 useEffect(()=>{
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         console.log(res.data[0]);
         setLoadBool(false)
@@ -54,7 +55,7 @@ function CreateUpdateDbCard(updateCdArr){
 
  
     useEffect(() => {
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/", config)
+        BaseUrl.get("student/profiledetails/", config)
             .then((res) => {
                 console.log(res);
                 setName(res.data.name)
@@ -67,7 +68,7 @@ function CreateUpdateDbCard(updateCdArr){
     
     useEffect(()=>{
       setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/", config).then((res) => {
+        BaseUrl.get("teacher/profiledetails/", config).then((res) => {
           setName(res.data.name)
                 setDob(res.data.DOB)
       }).catch(err=>{
@@ -86,7 +87,7 @@ function CreateUpdateDbCard(updateCdArr){
     const [loadBool,setLoadBool] = useState(false)
      useEffect(() => {
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/timetable/", config).
+        BaseUrl.get("teacher/timetable/", config).
             then((res) => {
                 console.log(res);
                 setLoadBool(false)

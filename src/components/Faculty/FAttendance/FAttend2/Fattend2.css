@@ -67,7 +67,7 @@ z-index:5000;
 
 }
 
-#present1 {
+.present1 {
     /* position: absolute; */
     display: block;
     width: 4vw;
@@ -80,13 +80,13 @@ z-index:5000;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    padding-top: 0.8vh;
+    padding-top: 1vh;
     margin-left: 54vw;
     cursor: pointer;
-    margin-top:-4.9vh;
+    margin-top:-4.2vh;
 }
 
-#absent1 {
+.absent1 {
     display: block;
     width: 4vw;
     height: 5vh;
@@ -98,11 +98,11 @@ z-index:5000;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    padding-top: 0.8vh;
+    padding-top: 1vh;
 margin-left: 58.5vw;
 margin-top: -4.9vh;
 z-index:999;
-
+cursor: pointer;
 }
 .FRow1{
     z-index: -91;
@@ -110,10 +110,31 @@ z-index:999;
 .FCardRow{
     position: relative;
     top: -10vh;
-    z-index: -95;
+    z-index: 95;
 }
 .FAttendCardCall{
-    /* float: left; */
+    padding-bottom:0px;
+}
+
+.facAttendanceButton{
+    /* position: absolute; */
+    width: 7vw;
+    height: 6vh;
+    /* left: 46.5vw; */
+    /* top: 48.5vh; */
+    margin-left:56vw;
+    color: white;
+    background: #6C63FF;
+    border-radius: 8px;
+    border: none;
+    padding-top:1.5vh;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+}
+.FAttendanceOne{
+    margin-bottom:100px;
+    padding-bottom: 20px;
 }
 @media(min-width:320px) and (max-width:915px) {
     .FAttendanceHead {

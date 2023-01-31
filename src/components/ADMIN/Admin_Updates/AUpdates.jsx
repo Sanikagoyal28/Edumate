@@ -7,6 +7,7 @@ import NewUpdateCard from "./makeNewUpdateAdmin";
 import { useNavigate } from "react-router-dom";
 import AdmBar from "../admin_bar/AdmBar";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
 function AUpdates(){
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -20,7 +21,7 @@ const config = {
  const [loadBool,setLoadBool] = useState(false);
 useEffect(()=>{
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         console.log(res)
         setLoadBool(false)
@@ -37,8 +38,8 @@ useEffect(()=>{
 function handleDeleteUpdates(id,title,description){
     console.log(id);
     setLoadBool(true)
-    const url = `https://erp-edumate.herokuapp.com/api/user/updatesection/`;
-    axios.delete((url+id),{
+    const url = `updatesection/`;
+    BaseUrl.delete((url+id),{
         headers:{
            Authorization: `Bearer ${adminAccessToken}`
         }

@@ -8,6 +8,7 @@ import EmailImg from "./emailImg";
 import "./FgtEmail.css";
 import EmailIcon from "./emailIcon";
 import axios from "axios";
+import BaseUrl from "../../utils/BaseUrl";
 function FgtEmail() {
   const [email, setEmail] = useState("");
   function handleemail(e) {
@@ -33,7 +34,7 @@ function postemail() {
   console.log("ahgfj");
   if(ckEmail){
     setLoadBool(true);
-  axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", {email})
+BaseUrl.post("sendotp/", {email})
     .then((res) => {
       toast.success("OTP sent successfully",{
         position: "top-center",
@@ -69,6 +70,7 @@ useEffect(()=>{
   else
   document.body.style.opacity="1"
 },[loadBool])
+
   return (
     <div className="AUTHENTICATION">
       <Background />

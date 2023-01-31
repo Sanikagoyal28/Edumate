@@ -7,6 +7,7 @@ import Background from "../Background/Background";
 import OTPImg from "./otpImg";
 import axios from "axios";
 import "./otp.css";
+import BaseUrl from "../../utils/BaseUrl";
 function OTP() {
   const [otp, setOtp] = useState("");
   function handleotp(e) {
@@ -14,16 +15,12 @@ function OTP() {
   }
   const isnum = /^\d+$/;
   const [seconds, setSeconds] = useState(59);
-  // const [minutes, setMinutes] = useState(0)
 
   useEffect(() => {
    const timer=
     seconds>0 && setInterval(() => {
       setSeconds(seconds-1)
     }, 1000);
-    if (seconds <= 0) {
-      document.getElementById('resend-otp').disabled = false;
-    }
     return () => clearInterval(timer);
     
   },[seconds]);
@@ -36,7 +33,7 @@ function OTP() {
     setLoadBool(true);
     console.log(email);
     var data = { email, otp }
-    axios.post("https://erp-edumate.herokuapp.com/api/user/verifyotp/", data)
+    BaseUrl.post("verifyotp/", data)
       .then((res) => {
         console.log(res);
         localStorage.setItem("otp",otp)
@@ -58,11 +55,12 @@ function OTP() {
 const [newOtp,setNewOtp]= useState("");
 const [navigateOtpToPwd,setNavigateOtpToPwd] = useState(false);
 function postResOtp(){
+  
   setLoadBool(true);
   localStorage.removeItem("otp");
   var data = { email }
   setSeconds(59);
-  axios.post("https://erp-edumate.herokuapp.com/api/user/sendotp/", data)
+  BaseUrl.post("sendotp/", data)
     .then((res) => {
       console.log(res);
       toast.success("OTP sent successfully on "+email,{
@@ -113,7 +111,7 @@ background:"none"
       />
       <br />
       <span id="no-otp-recieved">Don’t recieve an OTP?</span>
-      <button id="resend-otp" onClick={postResOtp} disabled>Resend OTP</button>
+      <button id="resend-otp" onClick={postResOtp} disabled={(seconds!==0)?true:false}>Resend OTP</button>
       <span id="timer">00:{seconds}</span>
         <button id="btn-continue" onClick={postotp}>CONTINUE</button>
       <OTPImg />

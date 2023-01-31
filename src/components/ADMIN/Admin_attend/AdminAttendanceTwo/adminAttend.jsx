@@ -8,6 +8,7 @@ import axios from "axios";
 import SubjectAttend from "../../../Student/Attendace2/Attendance";
 import { propTypes } from "react-bootstrap/esm/Image";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../../utils/BaseUrl";
 function AdmAttend(){
     const adminAccessToken = sessionStorage.getItem("Admin_access_token");
 console.log(adminAccessToken);
@@ -26,7 +27,7 @@ const config = {
 const [deptBool,setDeptBool] = useState(false)
     const [deptList,setDeptList] = useState([]);
     useEffect(()=>{
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+        BaseUrl.get("admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res.data);
             setDeptList(res.data);
@@ -42,7 +43,7 @@ const [deptBool,setDeptBool] = useState(false)
     const [classList, setClassList] = useState([]);
 function handleClassInDept(){
     if(deptBool){
-    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+departId+"/",config).
+    BaseUrl.get("admin/classesindepartment/"+departId+"/",config).
     then((res)=>{
         console.log(res.data);
         setClassList(res.data)
@@ -62,7 +63,7 @@ console.log(classList);
  const [loadBool , setLoadBool] = useState(false);
  function handleSubjectInClass(){
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/admin/studentattendancelist/"+classId+"/",config)
+    BaseUrl.get("admin/studentattendancelist/"+classId+"/",config)
     .then((res)=>{
         console.log(res);
         console.log(res.data);

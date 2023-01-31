@@ -6,6 +6,7 @@ import updateEmailImg from "./updateEmailImg.svg";
 import * as ReactBootStrap from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 import { Navigate, useNavigate } from "react-router-dom";
+import BaseUrl from "../BaseUrl";
 function UpdateEmail() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("")
@@ -38,7 +39,7 @@ const [loadBool,setLoadBool] = useState(false)
     function handleUpdateEmail() {
         setLoadBool(true)
         console.log(email);
-        axios.post("https://erp-edumate.herokuapp.com/api/user/updateemail/", {
+        BaseUrl.post("updateemail/", {
             email
         }, config).then((res) => {
             console.log(res);
@@ -56,7 +57,7 @@ const [loadBool,setLoadBool] = useState(false)
         })
     }
     function checkotp() {
-        axios.put("https://erp-edumate.herokuapp.com/api/user/updateemail/", { email,otp }, config)
+        BaseUrl.put("updateemail/", { email,otp }, config)
             .then((res) => {
                 console.log(res);
                 if (res.status == 200) {

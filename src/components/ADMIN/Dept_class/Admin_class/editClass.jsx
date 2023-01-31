@@ -8,6 +8,7 @@ import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import addStudent from "../../../Assests/Images/addStudent.svg";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../../utils/BaseUrl";
  function EditClassComp (){
     // const editDeptId =sessionStorage.getItem("EditDeptId");
 const editYear= sessionStorage.getItem("EditClassYear");
@@ -54,7 +55,7 @@ const config = {
     function handlePostEdClassApi(){
         console.log("ahsj,")
         setLoadBool(true)
-        axios.put("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+classId+"/",addDeptInfo,config).
+        BaseUrl.put("admin/classes/"+classId+"/",addDeptInfo,config).
         then((res)=>{
             console.log(res.data);
             setLoadBool(false)
@@ -67,7 +68,7 @@ const config = {
     }
     const [deptList,setDeptList] = useState([]);
     useEffect(()=>{
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+        BaseUrl.get("admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res.data);
             setDeptList(res.data);
@@ -87,7 +88,7 @@ const config = {
         </>
              }
     function handleCancelEdClassApi(){
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL/",config).
+        BaseUrl.get("admin/classes/"+"ALL/",config).
         then((res)=>{
             console.log(res.data);
             setAdminClAdd(AdminClAdd);

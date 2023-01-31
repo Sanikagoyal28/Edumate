@@ -10,6 +10,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
   import Instance from "../../../utils/axiosInterceptors";
+import BaseUrl from "../../../utils/BaseUrl";
  
 function AdminComponent (){
 const navigate = useNavigate();
@@ -25,8 +26,8 @@ const navigate = useNavigate();
      const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
         setLoadBool(true)
-        const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/";
-    axios.get(url+"ALL/",{
+        const url = "admin/departments/";
+    BaseUrl.get(url+"ALL/",{
             headers:{
                 Authorization: `Bearer ${adminAccessToken}`
              }}).
@@ -66,8 +67,8 @@ navigate("/editDeptCom");
     function handleDeleteDept(id){
         console.log(id);
         setLoadBool(true)
-        const url = `https://erp-edumate.herokuapp.com/api/user/admin/departments/`;
-        axios.delete((url+id),{
+        const url = `admin/departments/`;
+        BaseUrl.delete((url+id),{
             headers:{
                Authorization: `Bearer ${adminAccessToken}`
             }

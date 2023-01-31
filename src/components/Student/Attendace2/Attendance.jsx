@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Navbar from "../../utils/Navbar/Navbar";
 import axios from "axios";
 import { faBullseye } from "@fortawesome/free-solid-svg-icons";
+import BaseUrl from "../../utils/BaseUrl";
 function SubjectAttend (){
     const code = sessionStorage.getItem("subject_code");
     const subjectA = sessionStorage.getItem("subject_name");
@@ -27,7 +28,7 @@ function SubjectAttend (){
        }
     }
     function handleAPI(){
-            axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+month+"/",config)
+            BaseUrl.get("student/studentsubjectattendance/"+code+month+"/",config)
             .then((res)=>{
                 console.log(res);
                 setAttendSubArray(res.data)
@@ -40,7 +41,7 @@ function SubjectAttend (){
     const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+"/11/",config)
+        BaseUrl.get("student/studentsubjectattendance/"+code+"/11/",config)
         .then((res)=>{
             console.log(res);
             setLoadBool(false)
@@ -54,7 +55,7 @@ function SubjectAttend (){
 
     function handleAPI(){
     setLoadBool(true)
-            axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentsubjectattendance/"+code+"/"+month+"/",config)
+            BaseUrl.get("student/studentsubjectattendance/"+code+"/"+month+"/",config)
             .then((res)=>{
                 setLoadBool(false)
                 console.log(res);

@@ -7,6 +7,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { useState , useEffect } from 'react'
 import axios from "axios"
 import UpdateDashCard from '../../Student/Dashboard/updateDashCard'
+import BaseUrl from '../../utils/BaseUrl'
 
 const AdminDashboard = () => {
     // useEffect(()=>{
@@ -36,7 +37,7 @@ const AdminDashboard = () => {
     const [updateCdArr,setUpdateCdArr]=useState([]);
     useEffect(()=>{
         // setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+        BaseUrl.get("updatesection/0/",config).
         then((res)=>{
             console.log(res.data[0]);
             // setLoadBool(false)

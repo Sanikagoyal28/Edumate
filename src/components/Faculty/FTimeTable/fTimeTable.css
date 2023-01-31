@@ -7,6 +7,23 @@ left: 27vw;
 top: 18vh;
 border-radius: 15px;
 }
+
+.tableNew {
+    width:70vw;
+    margin-left: 1vw;
+    margin-top: 1.5vh;;
+}
+.tableNew td {
+    height:7vh;
+    /* width:5vw; */
+    text-align: center;
+    border:1px solid white;
+    /* padding: 0 10px; */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+}
+
 @media (max-width:1000px) and (min-width:800px) {
     .FTimeTable {
         width:84vw;

@@ -7,6 +7,7 @@ import Navbar from "../utils/Navbar/Navbar";
 import "../utils/UpdateEmailLog/UpdateEmail.css";
 // import updateEmailImg from "./updateEmailImg.svg";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../utils/BaseUrl";
 function FacUpdateEmail() {
     const [email, setEmail] = useState("")
     const [otp, setOtp] = useState('')
@@ -29,7 +30,7 @@ const [loadBool,setLoadBool] = useState(false)
     function handleUpdateEmail() {
         setLoadBool(true)
         console.log(email);
-        axios.post("https://erp-edumate.herokuapp.com/api/user/updateemail/", {
+        BaseUrl.post("updateemail/", {
             email
         }, config).then((res) => {
             console.log(res);
@@ -47,7 +48,7 @@ const [loadBool,setLoadBool] = useState(false)
         })
     }
     function checkotp() {
-        axios.put("https://erp-edumate.herokuapp.com/api/user/updateemail/", { email,otp }, config)
+        BaseUrl.put("updateemail/", { email,otp }, config)
             .then((res) => {
                 console.log(res);
             })

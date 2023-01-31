@@ -5,14 +5,14 @@
 height: fit-content;
 /* margin-top:15vh; */
 /* margin-left: 25vw; */
-left: 27vw;
-top: 18vh;
+left: 25.5vw;
+top: 20vh;
 border-radius: 15px;
 }
 .FAttendanceHead{
     position: absolute;
     left: 2vw;
-    top: 4vh;
+    top: 3vh;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
@@ -24,7 +24,7 @@ border-radius: 15px;
     background: rgba(217, 217, 217, 0.4);
 border-radius: 8px;
 position:absolute;
-top:13vh;
+top:11vh;
 left:1vw;
     width:65vw;
     height:7vh;
@@ -38,19 +38,23 @@ padding-top:2vh;
 }
 #Fdate{
     background: none;
-    margin-left:5.5vw;
+   position:absolute;
+   left:5vw;
 }
 #Ftime {
     background: none;
-    margin-left:8.3vw;
+    position:absolute;
+    left:18vw;
 }
 #Fclass{
     background: none;
-    margin-left:9.5vw;
+    position:absolute;
+    left:30vw;
 }
 #Fsubject{
     background: none;
-    margin-left:9vw;
+    position:absolute;
+    left:48vw;
 cursor: pointer;
 }
 .FCardContainer1 {
@@ -73,24 +77,28 @@ margin-top:2vh;
 }
 #FCdDate{
     background: none;
-    margin-left:5.5vw;
-    font-size:  calc(0.8vw+1rem);
+    position:absolute;
+    left:2vw;
+    font-size: 1rem;
     color:black;
 }
 #FCdTime{
     background: none;
-    margin-left:8.3vw;
-    font-size: calc(0.8vw+1rem);
+    position:absolute;
+    left:16.7vw;
+    font-size: 1rem;
 }
 #FCdClass{
     background: none;
-    margin-left:9.5vw;
-    font-size:  calc(0.8vw+1rem);
+    position:absolute;
+    left:31vw;
+    font-size: 1rem;
 }
 #FCdSubject{
     background: none;
-    font-size:  calc(0.8vw+1rem);
-    margin-left:9vw;
+    position:absolute;
+    left:40vw;
+    font-size: 1rem;
     cursor: pointer;
     text-decoration: underline;
 }
@@ -128,9 +136,9 @@ margin-top:2vh;
         width:90vw;
         height:50vh;
     } */
-    #FCdSubject{
-        /* font-size: 0.6rem; */
-    }
+    /* #FCdSubject{
+        /* font-size: 0.6rem; 
+    } */
 }
 @media (min-width:360px) and (max-width:360px) {
     .FAttendanceOne{

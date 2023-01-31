@@ -7,6 +7,7 @@ import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
   import addStudent from "../../../Assests/Images/addStudent.svg";
+import BaseUrl from "../../../utils/BaseUrl";
  function AddNewDeptComp (){
     const [deptName,setDeptName] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -33,8 +34,8 @@ const config = {
  const navigate = useNavigate();
     function handlePostDeptApi(){
         setLoadBool(true)
-        console.log("ahsj,")
-        axios.post("https://erp-edumate.herokuapp.com/api/user/admin/departments/0/",addDeptInfo,config).
+       
+    BaseUrl.post("admin/departments/0/",addDeptInfo,config).
         then((res)=>{
             console.log(res);
             toast.success("New Department Added",{
@@ -56,8 +57,8 @@ const config = {
     }
     function handleCancelDeptApi(){
         setLoadBool(true)
-        const url = "https://erp-edumate.herokuapp.com/api/user/admin/departments/"
-        axios.get(url+"ALL",{headers:{
+        const url = "admin/departments/"
+        BaseUrl.get(url+"ALL",{headers:{
             Authorization: `Bearer ${adminAccessToken}`
          }}).
         then((res)=>{

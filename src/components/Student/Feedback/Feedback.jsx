@@ -1,12 +1,11 @@
 import React from 'react'
-
-import faculty from '../faculty'
 import './Feedback.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Navbar from '../../utils/Navbar/Navbar'
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from '../../utils/BaseUrl'
 const Feedback = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -35,8 +34,7 @@ const Feedback = () => {
     const [loadBool,setLoadBool] = useState(false)
     useEffect(() => {
         setLoadBool(true)
-        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/'+`${id}`+'/', 
-             config)
+        BaseUrl.get('teacher/teachersofclass/'+`${id}`+'/', config)
             .then((res) => {
                 console.log(res);
                 setLoadBool(false)
@@ -84,7 +82,7 @@ const Feedback = () => {
                             let userID = 100000
                             let feed = 1;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -108,7 +106,7 @@ const Feedback = () => {
                             let userID = 100000
                             let feed = 2;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -129,7 +127,7 @@ const Feedback = () => {
                             let userID = 100000
                             let feed = 3;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -148,7 +146,7 @@ const Feedback = () => {
                             let userID = 100000
                             let feed = 4;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -165,7 +163,7 @@ const Feedback = () => {
                             let userID = 100000
                             let feed = 5;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import BaseUrl from "../../utils/BaseUrl";
 import "./TT.css";
 function TimeT (){
     const accessToken = sessionStorage.getItem("access token");
@@ -18,7 +19,7 @@ function TimeT (){
     const [array5,setArray5] = useState([]);
 
     useEffect(()=>{
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/",config).
+        BaseUrl.get("student/timetable/",config).
         then((res)=>{
             console.log(res.data);
             for(let i=0;i<30;i++){

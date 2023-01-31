@@ -21,6 +21,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import Footer from '../Footer/Footer';
 import axios from 'axios'
 import { useEffect } from 'react';
+import BaseUrl from '../BaseUrl';
 // import SideBar from '../Student/SideBar/sidebar'
 const Navbar = () => {
     const [show,setShow] = useState(false)
@@ -36,7 +37,7 @@ const Navbar = () => {
         }
     }
     useEffect(() => {
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/", config)
+        BaseUrl.get("student/profiledetails/", config)
             .then((res) => {
                 console.log(res);
                 setSname(res.data.name)

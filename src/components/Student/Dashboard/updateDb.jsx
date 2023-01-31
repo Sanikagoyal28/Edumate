@@ -7,6 +7,7 @@ import UpdateCard from "./updateCard";
 import axios from "axios";
 import Navbar from "../../utils/Navbar/Navbar";
 import * as ReactBootStrap from "react-bootstrap";
+import BaseUrl from "../../utils/BaseUrl";
  function Updates(){
 const accessToken = sessionStorage.getItem("access token");
 console.log(accessToken);
@@ -19,7 +20,7 @@ const config = {
 const [updateCdArr,setUpdateCdArr]=useState([]);
 useEffect(()=>{
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         console.log(res.data[0]);
         setLoadBool(false)

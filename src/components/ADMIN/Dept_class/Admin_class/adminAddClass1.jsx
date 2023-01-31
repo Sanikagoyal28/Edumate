@@ -10,6 +10,7 @@ import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import * as ReactBootStrap from "react-bootstrap";
 import addStudent from "../../../Assests/Images/addStudent.svg";
+import BaseUrl from "../../../utils/BaseUrl";
  function AddNewClassComp (){
     const [classId,setClassId] = useState("");
     const [deptId,setDeptId] = useState("");
@@ -51,7 +52,7 @@ const config = {
  const [deptList,setDeptList] = useState([]);
  const [loadBool,setLoadBool] = useState(false)
     useEffect(()=>{
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+        BaseUrl.get("admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res)
             console.log(res.data);
@@ -74,7 +75,7 @@ return <>
     function handlePostClassApi(){
         setLoadBool(true)
         console.log("ahsj,")
-        axios.post("https://erp-edumate.herokuapp.com/api/user/admin/classes/0/",addDeptInfo,config).
+        BaseUrl.post("admin/classes/0/",addDeptInfo,config).
         then((res)=>{
             console.log(res);
             setLoadBool(false)
@@ -87,7 +88,7 @@ return <>
         })
     }
     function handleCancelClassApi(){
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classes/"+"ALL",config).
+        BaseUrl.get("admin/classes/"+"ALL",config).
         then((res)=>{
             console.log(res.data);
             setAdminClAdd(AdminClAdd);

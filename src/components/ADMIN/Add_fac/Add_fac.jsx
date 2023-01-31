@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import addStudent from "../../Assests/Images/addStudent.svg";
   import 'react-toastify/dist/ReactToastify.css';
 import './add_fac.css'
+import BaseUrl from '../../utils/BaseUrl';
 const Add_fac = () => {
   const [name, setName] = useState('')
   const [DOB, setDob] = useState('')
@@ -43,7 +44,7 @@ const Add_fac = () => {
  sessionStorage.setItem("Department_Id",departId)
     const [deptList,setDeptList] = useState([]);
     useEffect(()=>{
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+        BaseUrl.get("admin/departments/"+"ALL/",config)
         .then((res)=>{
             console.log(res.data);
             setDeptList(res.data);
@@ -59,7 +60,7 @@ const Add_fac = () => {
   var data = {name,department,email,DOB}
   function senddata() {
     setLoadBool(true)
-    axios.post('https://erp-edumate.herokuapp.com/api/user/admin/addteacher/', data, config)
+    BaseUrl.post('admin/addteacher/', data, config)
       .then((res) => {
         console.log(res);
         toast.success(res.data.msg,{

@@ -1,5 +1,4 @@
 import React from 'react'
-import faculty from '../../Student/faculty'
 import './ad_feed.css'
 import axios from 'axios'
 import { useState } from 'react'
@@ -8,6 +7,7 @@ import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import BaseUrl from '../../utils/BaseUrl'
 const Ad_feed = () => {
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -33,7 +33,7 @@ const Ad_feed = () => {
     const [loadBool,setLoadBool] = useState(false)
     useEffect(() => {
         setLoadBool(true)
-        axios.post('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', config, {
+        BaseUrl.post('student/teacherfeedback/', config, {
             feed
         })
             .then((res) => {
@@ -47,7 +47,7 @@ const Ad_feed = () => {
     }, [])
     useEffect(() => {
         setLoadBool(true)
-        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/teachersofclass/', { id }, config)
+    BaseUrl.get('teacher/teachersofclass/', { id }, config)
             .then((res) => {
                 console.log(res);
                 setLoadBool(false)
@@ -81,7 +81,7 @@ const Ad_feed = () => {
                     <option value="">Faculty</option>
                     <option value="">Student</option>
                 </select>
-                <div id="fac-area">
+                {/* <div id="fac-area">
                     {faculty.map(fac => {
 
                         let rating = document.getElementsByClassName('feed_circle')
@@ -97,7 +97,7 @@ const Ad_feed = () => {
                             let userID = 234223
                             let feed = 1;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -121,7 +121,7 @@ const Ad_feed = () => {
                             let userID
                             let feed = 2;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -142,7 +142,7 @@ const Ad_feed = () => {
                             let userID
                             let feed = 3;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -161,7 +161,7 @@ const Ad_feed = () => {
                             let userID
                             let feed = 4;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -178,7 +178,7 @@ const Ad_feed = () => {
                             let userID
                             let feed = 5;
                             var data = { userID, feed }
-                            axios.put('https://erp-edumate.herokuapp.com/api/user/student/teacherfeedback/', data, config)
+                            BaseUrl.put('student/teacherfeedback/', data, config)
                                 .then((res) => {
                                     console.log(res);
                                 })
@@ -205,7 +205,7 @@ const Ad_feed = () => {
                             </>
                         )
                     })}
-                </div>
+                </div> */}
             </div>
             {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
         </>

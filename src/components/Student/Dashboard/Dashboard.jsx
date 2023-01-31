@@ -12,6 +12,7 @@ import Classcard1 from './Classcard'
 import Navbar from '../../utils/Navbar/Navbar'
 import UpdateDashCard from './updateDashCard';
 import { Link, useNavigate } from 'react-router-dom';
+import BaseUrl from '../../utils/BaseUrl';
 
 const Dashboard = () => {
     const [name, setName] = useState('')
@@ -38,7 +39,7 @@ const Dashboard = () => {
   
     const code = sessionStorage.getItem("subject_code");
     useEffect(() => {
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/profiledetails/", config)
+        BaseUrl.get("student/profiledetails/", config)
             .then((res) => {
                 console.log(res);
                 setName(res.data.name)
@@ -50,7 +51,7 @@ const Dashboard = () => {
     }, [])
     const [loadBool, setLoadBool] = useState(false)
     useEffect(() => {
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/studentoverallattendance/", config)
+        BaseUrl.get("student/studentoverallattendance/", config)
             .then((res) => {
                 console.log(res);
                 setAt(res.data[0].attended_classes)
@@ -61,23 +62,11 @@ const Dashboard = () => {
                 console.log(err)
             })
     }, [])
-    // useEffect(() => {
-    //     setLoadBool(true)
-    //     axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/", config).
-    //         then((res) => {
-    //             console.log(res.data[0]);
-    //             setLoadBool(false)
-    //             setPeriod(res.data[0]);
-    //         })
-    //         .catch((err) => {
-    //             setLoadBool(false)
-    //             console.log(err);
-    //         })
-    // }, [])
+  
 
     useEffect(() => {
         setLoadBool(true)
-        axios.get("https://erp-edumate.herokuapp.com/api/user/student/timetable/", config).
+        BaseUrl.get("student/timetable/", config).
             then((res) => {
                 console.log(res.data);
                 setLoadBool(false)
@@ -117,7 +106,7 @@ const Dashboard = () => {
 const [updateCdArr,setUpdateCdArr]=useState([]);
 useEffect(()=>{
     setLoadBool(true)
-    axios.get("https://erp-edumate.herokuapp.com/api/user/updatesection/0/",config).
+    BaseUrl.get("updatesection/0/",config).
     then((res)=>{
         console.log(res.data[0]);
         setLoadBool(false)

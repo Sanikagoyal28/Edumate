@@ -6,6 +6,7 @@ import axios from 'axios'
 import './assign_fac.css'
 import DateTime from './date-time-card'
 import { useNavigate } from 'react-router-dom'
+import BaseUrl from '../../utils/BaseUrl'
 const Assign_fac = () => {
   const adminAccessToken = sessionStorage.getItem("Admin_access_token");
   console.log(adminAccessToken);
@@ -27,7 +28,7 @@ const Assign_fac = () => {
   const [deptBool,setDeptBool] = useState(false)
       const [deptList,setDeptList] = useState([]);
       useEffect(()=>{
-          axios.get("https://erp-edumate.herokuapp.com/api/user/admin/departments/"+"ALL/",config)
+          BaseUrl.get("admin/departments/"+"ALL/",config)
           .then((res)=>{
               console.log(res.data);
               setDeptList(res.data);
@@ -43,7 +44,7 @@ const Assign_fac = () => {
       const [classList, setClassList] = useState([]);
       function handleClassInDept(){
           if(deptBool){
-          axios.get("https://erp-edumate.herokuapp.com/api/user/admin/classesindepartment/"+departId+"/",config).
+          BaseUrl.get("admin/classesindepartment/"+departId+"/",config).
           then((res)=>{
               console.log(res.data);
               setClassList(res.data)
@@ -56,7 +57,7 @@ const Assign_fac = () => {
       console.log(classList);
       const [facList,setFacList] = useState([])
       function handleFacInClass(){
-        axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/teachersindepartment/"+departId+"/",config)
+        BaseUrl.get("teacher/teachersindepartment/"+departId+"/",config)
         .then((res)=>{
             console.log(res);
             console.log(res.data);
@@ -68,7 +69,7 @@ const Assign_fac = () => {
       
      const [dateTimeArray , setDateTimeArray] = useState([])
      function handleDateTimeList(){
-        axios.get("https://erp-edumate.herokuapp.com/api/user/admin/assigntimeslots/S1/KCS301/100001/",config)
+        BaseUrl.get("admin/assigntimeslots/S1/KCS301/100001/",config)
         .then((res)=>{
             console.log(res);
         })

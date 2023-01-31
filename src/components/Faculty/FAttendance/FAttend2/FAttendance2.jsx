@@ -8,14 +8,12 @@ import ToggleAttend from "./ToggleAttend";
 import { useEffect } from "react";
 import axios from "axios";
 import Navbar from '../../../utils/Navbar/Navbar'
-// import { faLoveseat } from "@fortawesome/sharp-solid-svg-icons";
+import BaseUrl from "../../../utils/BaseUrl";
 function FAttendance2() {
-    // const time = sessionStorage.getItem("fac_attend_time")
-    // const id = sessionStorage.getItem("fac_attend_id")
-    // const date = sessionStorage.getItem("fac_attend_date")
-    const time = '8:30 - 9:20'
-    const id = 'S1'
-    const date = '2022-11-08'
+
+    const time = sessionStorage.getItem("fac_attend_time")
+    const id = sessionStorage.getItem("fac_attend_id")
+    const date =  sessionStorage.getItem("fac_attend_date")
     const [attendFacArray, setAttendFacArray] = useState([])
     const [attendFacArrayid, setAttendFacArrayId] = useState([])
     var accessToken = sessionStorage.getItem("Faculty_access_token")
@@ -27,20 +25,24 @@ function FAttendance2() {
     const [newArr,setNewArr] = useState([])
     const [object,setObject] = useState({});
     const [putArray, setPutArray] = useState([])
+    const [marked, setIsMarked] = useState(false)
     useEffect(() => {
-        axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/TakeStudentsAttendance/'+date+'/'+id+'/'+time+'/', config)
-            // axios.get('https://erp-edumate.herokuapp.com/api/user/teacher/StudentsinClassAttendance/2022-12-16/S1/11:00 - 11:50/',config)
+        BaseUrl.get('teacher/TakeStudentsAttendance/'+date+'/'+id+'/'+time+'/', config)
             .then((res) => {
-                console.log(res);
+                console.warn(res);
                 setLoadBool(false)
-                console.log(res.data[0])
+                // console.log(res.data[0])
                 setObject(res.data[0]);
-                setPutArray(oldARRAY=>[oldARRAY,res.data[0]])
+                // setPutArray(oldARRAY=>[oldARRAY,res.data[0]])
+                var x = res.data.splice(0,1)
+                console.log(x)
+                setIsMarked(x[0].marked)
+                console.log(x[0].marked)
                 setAttendFacArray(res.data)
                 setAttendFacArrayId(res.data)
             })
             .catch((err) => {
-                console.log(err);
+                console.warn(err);
                 setLoadBool(false)
             })
     }, [])
@@ -50,36 +52,34 @@ function FAttendance2() {
         console.log(Mark)
 Mark=true;
 console.log(Id)
-console.log("present")
 var dataSend={
     name:Name,
     userID:Id,
     is_present:Mark
 };
 console.log(dataSend)
-setPutArray(oldARRAY=>[oldARRAY, dataSend])
+setPutArray([...putArray, dataSend])
     }
 
-    function handleMarkAbsent(Name,Id,Mark){
+    function handleMarkAbsent(Id, Name,Mark){
         console.log(Mark)
 Mark=false;
 console.log(Id)
-console.log("present")
 var dataSend={
     name:Name,
     userID:Id,
     is_present:Mark
 };
 console.log(dataSend)
-setPutArray(oldARRAY=>[oldARRAY, dataSend])
+setPutArray([...putArray, dataSend])
     }
 
-    function CreateFAttendCard2(attendFacArray) {
-        return (
-            <>
-            <FCard2 name={attendFacArray.name} id={attendFacArray.userID} present={attendFacArray.is_present} userid={attendFacArray.userID} presentFunc={()=>handleMarkPresent(attendFacArray.name,attendFacArray.userID,attendFacArray.is_present)} absentFunc={()=>handleMarkAbsent(attendFacArray.userID,attendFacArray.name,attendFacArray.is_present)}  />  </>
-        )
-    }
+    // function CreateFAttendCard2(attendFacArray) {
+    //     return (
+    //         <>
+    //        >
+    //     )
+    // }
     // var test = 0
     // function toggleAttend2(attendFacArrayid) {
     //     test++;
@@ -91,6 +91,7 @@ setPutArray(oldARRAY=>[oldARRAY, dataSend])
     //     )
     // }
     const [loadBool, setLoadBool] = useState(true)
+    console.warn(putArray)
     return <>
         <Navbar />
         <h1 className="dbAttend" id="DBAttend">Dashboard : Attendance </h1>
@@ -101,15 +102,19 @@ setPutArray(oldARRAY=>[oldARRAY, dataSend])
                 <span id="FName">Name</span>
                 <span id="FAttendMark">Attendance</span>
             </div>
+            <p className="attendanceMarked" style={{color:"black"}} >marked</p>
             <div className="FAttendCardCall">
-                {attendFacArray.map(CreateFAttendCard2)}
-                {/* {attendFacArray.map(toggleAttend2)} */}
+                {attendFacArray.map((attendFacArray, index)=>{
+                    return <>
+                    <FCard2 name={attendFacArray.name} index={index} id={attendFacArray.userID} present={attendFacArray.is_present} userid={attendFacArray.userID} presentFunc={()=>handleMarkPresent(attendFacArray.name,attendFacArray.userID,attendFacArray.is_present)}
+                     absentFunc={()=>handleMarkAbsent(attendFacArray.userID,attendFacArray.name,attendFacArray.is_present)}  /> 
+                    </>
+
+                })}
             </div>
-            <div className="attendButton5" type="button">Done</div>
+            {/* <div className="facAttendanceButton" onClick={()=>{handleAttendanceMark()}} type="button">Done</div> */}
         </div>
         {loadBool ? (<ReactBootStrap.Spinner animation="border" id="apiloader" />) : null}
     </>
 }
 export default FAttendance2;
-// export {handleMarkAbsent} ;
-// export handleMarkPresent ;

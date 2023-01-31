@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
 import Navbar from '../../utils/Navbar/Navbar';
+import BaseUrl from '../../utils/BaseUrl';
 // import axiosInstance from '../utils/axiosInstance'
 
 const FacultyProfile = () => {
@@ -92,7 +93,7 @@ const [show3,setShow3] = useState(false);
    // const [loadBool, setLoadBool] = useState(false)
    useEffect(()=>{
       setLoadBool(true)
-      axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+      BaseUrl.get("teacher/profiledetails/",config).then((res)=>{
          setLoadBool(false)
          console.log(res);
          setProfileName(res.data.name);
@@ -128,7 +129,8 @@ const [show3,setShow3] = useState(false);
              document.getElementById('cancelButton').style.display = "block";
              document.getElementById('editButton').style.display = "none";
          }
-         axios.get("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",config).then((res)=>{
+         if(isCorrect){
+         BaseUrl.get("teacher/profiledetails/",config).then((res)=>{
             setLoadBool(true)
             console.log(res);
             setProfileName(res.data.name);
@@ -145,7 +147,7 @@ const [show3,setShow3] = useState(false);
          }).catch(err=>{
             console.log(err);
          })
-
+      }
    }
 
    function handleSaveProfile(){
@@ -163,7 +165,8 @@ const [show3,setShow3] = useState(false);
          }
       setEditAble(false);
       setLoadBool(true)
-      axios.put("https://erp-edumate.herokuapp.com/api/user/teacher/profiledetails/",{
+      if(isCorrect){
+      BaseUrl.put("teacher/profiledetails/",{
          name:profileName,
          sex:profileSex,
          blood_group:profileBG,
@@ -175,12 +178,10 @@ const [show3,setShow3] = useState(false);
          teacher_phone:profileMobile,
          pincode:profilePin,
          picture :profileImage
-         // email:"erp.edumate.testEr@gmail.com"
       },config).then((res)=>{
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
-         // setProfileEmail(res.data.email);
          setProfileDOB(res.data.DOB);
          setProfileAddr(res.data.address);
          setProfileCity(res.data.city);
@@ -190,6 +191,7 @@ const [show3,setShow3] = useState(false);
          setProfileImage(res.data.piicture)
          setLoadBool(true)
       })
+   }
   }
   sessionStorage.setItem("FacultyName",profileName)
   useEffect(()=>{
@@ -198,6 +200,92 @@ const [show3,setShow3] = useState(false);
    else
    document.body.style.opacity="1"
  },[loadBool])
+
+ 
+   /*VALIDATION*/
+
+   const rightName = /^[a-z ,.'-]+$/i;
+const [isCorrect , setIsCorrect] = useState(false);
+useEffect(() => {
+   if (rightName.test(profileName)) {
+     document.getElementById("wrongName").style.display = "none";
+     setIsCorrect(true);
+   } else if (profileName) {
+     document.getElementById("wrongName").style.display = "block";
+     setIsCorrect(false);
+   }
+ }, [profileName]);
+
+ const rightBldGrp = /^(A|B|AB|O)[-+]$/g;
+ useEffect(() => {
+   if (rightBldGrp.test(profileBG)) {
+     document.getElementById("wrongBG").style.display = "none";
+     setIsCorrect(true);
+   } else if (profileBG) {
+     document.getElementById("wrongBG").style.display = "block";
+     setIsCorrect(false);
+   }
+ }, [profileBG]);
+
+ const rightemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ useEffect(()=>{
+if(rightemail.test(profileEmail)){
+   document.getElementById("wrongEmail").style.display="none";
+   setIsCorrect(true)
+}
+else if(profileEmail){
+   document.getElementById("wrongEmail").style.display="block";
+   setIsCorrect(false)
+}
+ },[profileEmail])
+
+ const rightCity = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+ useEffect(()=>{
+   if(rightCity.test(profileCity)){
+      document.getElementById("wrongCity").style.display="none";
+      setIsCorrect(true)
+   }
+   else if(profileCity){
+      document.getElementById("wrongCity").style.display="block";
+      setIsCorrect(false)
+   }
+    },[profileCity])
+
+    const rightState = /[A-Z][a-z]+(?: +[A-Z][a-z]+)*/;
+ useEffect(()=>{
+   if(rightState.test(profileState)){
+      document.getElementById("wrongState").style.display="none";
+      setIsCorrect(true)
+   }
+   else if(profileState){
+      document.getElementById("wrongState").style.display="block";
+      setIsCorrect(false)
+   }
+    },[profileState])
+    
+const isnum = /^\d+$/;
+          useEffect(()=>{
+            if(isnum.test(profileMobile)){
+               document.getElementById("wrongNum").style.display="none";
+               setIsCorrect(true)
+            }
+            else if(profileMobile){
+               document.getElementById("wrongNum").style.display="block";
+               setIsCorrect(false)
+            }
+             },[profileMobile])
+
+             const pinCode = /^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$/;
+             useEffect(()=>{
+               if(pinCode.test(profilePin)){
+                  document.getElementById("wrongPin").style.display="none";
+                  setIsCorrect(true)
+               }
+               else if(profilePin){
+                  document.getElementById("wrongPin").style.display="block";
+                  setIsCorrect(false)
+               }
+                },[profilePin])
     return ( 
         <>
        <Navbar />
