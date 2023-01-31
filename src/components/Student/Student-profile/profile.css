@@ -141,6 +141,7 @@ color: #000000;
 }
 #wrongBG{
     top:48vh;
+    display: none;
 }
 #wrongEmail{
     top:58vh;

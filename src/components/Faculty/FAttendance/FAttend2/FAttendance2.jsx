@@ -1,7 +1,6 @@
 import React from "react";
 import "./Fattend2.css";
 import FCard2 from "./FAttendCard2";
-import FAttend2Array from "./FAttendArray2";
 import * as ReactBootStrap from "react-bootstrap";
 import { useState } from "react";
 import ToggleAttend from "./ToggleAttend";
@@ -97,7 +96,7 @@ setPutArray([...putArray, dataSend])
                 <span id="FName">Name</span>
                 <span id="FAttendMark">Attendance</span>
             </div>
-            <p className="attendanceMarked" style={{color:"black"}} >marked</p>
+            {/* <p className="attendanceMarked" style={{color:"black"}} >marked</p> */}
             <div className="FAttendCardCall">
                 {attendFacArray.map((attendFacArray, index)=>{
                     return <>

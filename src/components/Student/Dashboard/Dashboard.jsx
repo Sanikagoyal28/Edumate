@@ -28,6 +28,7 @@ const Dashboard = () => {
     const [fperiod, setFperiod] = useState('')
     const [seriod, setSperiod] = useState('')
     const [tperiod, setTperiod] = useState('')
+    const [gperiod, setGperiod] = useState('')
     const [foperiod, setFoperiod] = useState('')
     const accessToken = sessionStorage.getItem("access token");
     console.log(accessToken);
@@ -62,7 +63,19 @@ const Dashboard = () => {
                 console.log(err)
             })
     }, [])
-  
+    const dat = new Date()
+    const date = dat.getDate();
+    const monthNum = dat.getMonth();
+    const year = dat.getFullYear();
+    const dayNum = dat.getDay()
+
+    const day =[
+       "Sunday", "Monday", "Tuesday" , "Wednesday" , "Thursday" , "Friday", "Saturday"
+    ]
+    const month =[
+        "January", "February", "March", "April", "May" ,"June", "July","August", "September","October", "November", "December"
+    ]
+    console.log(date, month ,year, dayNum)
 
     useEffect(() => {
         setLoadBool(true)
@@ -71,10 +84,7 @@ const Dashboard = () => {
                 console.log(res.data);
                 setLoadBool(false)
                 for (let i = 0; i < 30; ++i) {
-                    if (res.data[i].day === "Monday" && res.data[i].subject) {
-                        console.log("asdf" + res.data[i].period);
-                        console.log("fdsa" + res.data[i].subject);
-                        // <Classcard1 time={res.data[i].period} name={res.data[i].subject} />
+                    if (res.data[i].day === day[dayNum] && res.data[i].subject) {
                         setPeriod(res.data[i].period)
                         setTemp(true)
                         console.log(period);
@@ -86,7 +96,10 @@ const Dashboard = () => {
                         }
                         else if (res.data[i].period === "11:00 - 11:50") {
                             setTperiod(res.data[i].subject)
-                        } else {
+                        } else if (res.data[i].period === "1:30 - 2:20") {
+                            setGperiod(res.data[i].subject)
+                        }
+                        else {
                             setFoperiod(res.data[i].subject)
                         }
                     }
@@ -143,7 +156,7 @@ function CreateUpdateDbCard(updateCdArr){
                 <div id="greeting1"><span className='bold'>Hello,</span> {name}<br /><span id="greeting2">Nice to have you back, what an exciting day!</span></div>
                 <div id="today_class">Today's Classes</div>
                 <div id="class_bg">
-                    <div id="date">16 Nov, 2022 Wednesday</div>
+                <div id="date">{date} {month[monthNum-1]}, {year} {day[dayNum]}</div>
                 </div>
                 <div id="right">
                     <div id="profile_details">Profile Details</div>
@@ -171,6 +184,11 @@ function CreateUpdateDbCard(updateCdArr){
                         <span className="circle_name"></span>
                         <span className="class_name12">{foperiod}</span>
                         <span className="class_time4">11:50-12:40</span>
+                    </div>
+                    <div id="classNew" className='class'>
+                        <span className="circle_name"></span>
+                        <span className="class_name12">{gperiod}</span>
+                        <span className="class_time4">1:30-2:20</span>
                     </div>
                     <div id="attendance">Attendance</div>
                     <div id="card2">

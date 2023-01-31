@@ -297,7 +297,7 @@ const Profile = () => {
          document.getElementById("wrongBG").style.display = "none";
          setIsCorrect(true);
       } else if (profileBG) {
-         document.getElementById("wrongBG").style.display = "block";
+         document.getElementById("wrongBG").style.display = "none";
          setIsCorrect(false);
       }
    }, [profileBG]);
