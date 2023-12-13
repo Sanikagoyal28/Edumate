@@ -29,6 +29,7 @@
   border-radius: 5px;
   padding-left: 20px;
   font-size: 16px;
+  outline:0.5px solid #000;
 }
 
 #confirm-pass {
@@ -61,6 +62,7 @@
   padding-left: 20px;
   font-size:16px;
   cursor:pointer;
+  outline:0.5px solid #000;
 }
 
 #btn-reset {

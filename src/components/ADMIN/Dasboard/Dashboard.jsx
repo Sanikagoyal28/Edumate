@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import './dashboard1.css'
-import profileimg from '../../Assests/Images/avatar.png'
+import profileimg from '../../Assests/avatar.png'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import { useState , useEffect } from 'react'

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import AdmBar from "../../admin_bar/AdmBar";
 import * as ReactBootStrap from "react-bootstrap";
 import Instance from "../../../utils/axiosInterceptors";
-import addStudent from "../../../Assests/Images/addStudent.svg";
+import addStudent from "../../../Assests/addStudent.svg";
 import BaseUrl from "../../../utils/BaseUrl";
  function EditDeptComp (){
     const editDeptIdNew = sessionStorage.getItem("editDeptId");

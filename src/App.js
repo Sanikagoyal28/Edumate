@@ -1,11 +1,9 @@
 import React from "react";
 import OTP from "./components/AUTHENTICATION/OTP/otp";
 import ResetPwd from "./components/AUTHENTICATION/resetPwd/resetPwd";
-import LogIn from "./components/AUTHENTICATION/Login/LogIn";
 import Formlogin from "./components/AUTHENTICATION/Form-login/Form-login";
 import FgtEmail from "./components/AUTHENTICATION/Forgotpass/FgtEmail";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Chart from "./components/utils/Pie/Pie";
 import Dashboard from "./components/Student/Dashboard/Dashboard";
 import Feedback from "./components/Student/Feedback/Feedback";
 import StudChangepass from "./components/Student/stud_Change_pass/Changepass";
@@ -42,8 +40,6 @@ import Assign_fac from "./components/ADMIN/Assign_fac/Assign_fac";
 import StUpdateEmail from "./components/Student/St_UpdateEmail";
 import FacUpdateEmail from "./components/Faculty/FacUpdateEmail";
 import AdmUpdateEmail from "./components/ADMIN/AdmUpdateEmail";
-
-
 import FacChangepass from "./components/Faculty/Fac_Change_pass/Changepass";
 import AdmChangepass from "./components/ADMIN/admin_Change_pass/Changepass";
 import FacultyClass from "./components/ADMIN/Assign_fac/assign-fac-page";
@@ -62,15 +58,13 @@ function App() {
   const isFacAttend = sessionStorage.getItem("Nav_rst_Login")
   const otpToPwd = sessionStorage.getItem("NavigatePassword");
   const pwdToLogin = sessionStorage.getItem("NavToLogin")
-  console.log(Route_to_login);
-  console.log(loggedInUser)
+
   const isAuthenticate = false;
-  console.log(isAuthenticate)
+
   return <>
     <BrowserRouter>
       <Routes>
-  
-        {(!Route_to_login || logOut || pwdToLogin) ? (<Route path="/" exact element={<LogIn />} />) : (null)}
+        {(!Route_to_login || logOut || pwdToLogin) ? (<Route path="/" exact element={<Formlogin />} />) : (null)}
         <Route path="/fgtEmail" exact element={<FgtEmail />} />
         {/* {navigateOtp ? (<Route path="/otp" element={<OTP />} />) : (null)} */}
         <Route path="/logout" exact element={<Logout />} />
@@ -86,7 +80,6 @@ function App() {
         {isFaculty ? (<Route path="/rstPwd" exact element={<FacDashboard />} />) : (null)}
         {loggedInUser == 1 ? (<Route path="/facDashboard" exact element={<FacDashboard />} />) : (null)}
         {loggedInUser == 1 ? (<Route path="/ftimetable" exact element={<FTimeTable />} />) : (null)}
-        {/* {loggedInUser==1?( <Route path="/facFeed" exact element={<FacFeedback />} />):(null)} */}
         {loggedInUser == 1 ? (<Route path="/Fupdate" exact element={<FUpdate />} />) : (null)}
         {loggedInUser == 1 ? (<Route path="/facUpdateEmail" exact element={<FacUpdateEmail />} />) : (null)}
         {loggedInUser == 1 ? (<Route path="/facProfile" exact element={<FacultyProfile />} />) : (null)}
@@ -97,10 +90,6 @@ function App() {
         <Route path="/feedBackOne" exact element={<FeedBackOne />} />
         <Route path="/Fupdate" exact element={<FUpdate />} />
         <Route path="/assignFac" exact element={<Assign_fac />} />
-        {/* {loggedInUser==1?( <Route path="/facAttend1" exact element={<FAttendance1/>} />):(null)} */}
-        {/* {loggedInUser==1?( <Route path="/facAttend2" exact element={<FAttendance2/>} />):(null)} */}
-        {/* <Route path="/updates" exact element={<Updates />} />):(null) /> */}
-       
         <Route path="/update_email" exact element={<UpdateEmail />} />
         <Route path="/profile" exact element={<Profile />} />
       
@@ -120,7 +109,6 @@ function App() {
         {loggedInUser == 2 ? (<Route path="/studChngPwd" exact element={<StudChangepass />} />) : (null)}
 
         { /*ADMIN ROUTES*/}
-
         {loggedInUser == 9 ? (<Route path="/admin_dashboard" exact element={<AdminDashboard />} />) : (null)}
         {isAdmin ? (<Route path="/admin_dashboard" exact element={<ResetPwd />} />) : (null)}
         {loggedInUser == 9 ? (<Route path="/editDeptCom" exact element={<EditDeptComp />} />) : (null)}

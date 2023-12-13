@@ -3,7 +3,7 @@ import React from 'react'
 // import './fac-dashboard.css'
 import * as ReactBootStrap from "react-bootstrap";
 import UpdateDashCard from '../../Student/Dashboard/updateDashCard';
-import profileimg from '../../Assests/Images/avatar.png'
+import profileimg from '../../Assests/avatar.png'
 // import updateimg from '../Assests/Images/updates-img-removebg-preview.png'
 import Chart from '../../utils/Pie/Pie'
 import { useEffect } from 'react'

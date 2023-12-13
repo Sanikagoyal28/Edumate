@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../Student/Student-profile/profile.css";
-import avatar from "../../Assests/Images/avatar.png";
+import avatar from "../../Assests/avatar.png";
 import ProfileInputField from "../../utils/ProfileInputField"
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
 import * as ReactBootStrap from "react-bootstrap";

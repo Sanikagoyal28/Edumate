@@ -5,7 +5,7 @@ import Navbar from '../../utils/Navbar/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import './changepass.css';
-import changepass from "../../Assests/Images/changepass.png"
+import changepass from "../../Assests/changepass.png"
 import * as ReactBootStrap from "react-bootstrap";
 import { useState } from 'react';
 import { useEffect } from 'react';

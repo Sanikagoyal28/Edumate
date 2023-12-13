@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import "../../utils/Navbar/Navbar.css";
 import "../../SideBar/sideBar.css";
-import profileicon from '../../Assests/Images/profile-icon.png'
-import nameimg from '../../Assests/Images/Name.png'
-import ch_em from '../../Assests/Images/change_email.png'
-import ch_pas from '../../Assests/Images/change_pass.png'
-import logout from '../../Assests/Images/Logout.png'
-import attendanceicon from "../../Assests/Images/attendanceicon.svg";
-import feedbackicon from "../../Assests/Images/feedbackicon.svg";
-import dashboard from "../../Assests/Images/dashboard.svg"
-import ph_student from "../../Assests/Images/ph_student.svg";
-import timetableicon from "../../Assests/Images/timetableicon.svg";
-import updatesicon from "../../Assests/Images/updatesicon.svg";
+import profileicon from '../../Assests/profile-icon.png'
+import nameimg from '../../Assests/Name.png'
+import ch_em from '../../Assests/change_email.png'
+import ch_pas from '../../Assests/change_pass.png'
+import logout from '../../Assests/Logout.png'
+import attendanceicon from "../../Assests/attendanceicon.svg";
+import feedbackicon from "../../Assests/feedbackicon.svg";
+import dashboard from "../../Assests/dashboard.svg"
+import ph_student from "../../Assests/ph_student.svg";
+import timetableicon from "../../Assests/timetableicon.svg";
+import updatesicon from "../../Assests/updatesicon.svg";
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import "./admBar.css";
 import Footer from "../../utils/Footer/Footer"
 import './admin_bar.css'
-// import SideBar from '../Student/SideBar/sidebar'
+
 const AdmBar = () => {
     const [show,setShow] = useState(false)
     // // const facUserId = sessionStorage.getItem("Faculty_userId");

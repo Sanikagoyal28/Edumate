@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import './add_stu.css'
-import addStudent from "../../Assests/Images/addStudent.svg";
+import addStudent from "../../Assests/addStudent.svg";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import BaseUrl from '../../utils/BaseUrl';

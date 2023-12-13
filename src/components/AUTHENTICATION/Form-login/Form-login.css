@@ -1,15 +1,18 @@
 * {
   z-index: 2;
 }
+
 .AUTHENTICATION {
   overflow: hidden;
 }
-    #apiloader{
-      position:absolute;
-      top:45vh;
-      left:50vw;
-      background:none;
-    }
+
+#apiloader {
+  position: absolute;
+  top: 45vh;
+  left: 50vw;
+  background: none;
+}
+
 #user-id {
   position: absolute;
   width: 5.5vw;
@@ -55,7 +58,6 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
-  outline-color: #6c63ff;
 }
 
 #input-box2 {
@@ -72,7 +74,6 @@
   border-radius: 5px;
   background-color: white;
   padding-left: 7vh;
-  outline-color: #6c63ff;
 }
 
 ::placeholder {
@@ -100,7 +101,7 @@
   background: none;
 }
 
-#wrongPassLogin{
+#wrongPassLogin {
   position: absolute;
   height: 5vh;
   left: 56vw;
@@ -115,6 +116,7 @@
   display: none;
   background: none;
 }
+
 #btn-submit {
   box-sizing: border-box;
   font-size: 1.1rem;
@@ -212,6 +214,7 @@
   background: none;
   cursor: pointer;
 }
+
 /* @media (max-width: 1163px) {
   #heading{
   font-size: 1.72em;
@@ -239,7 +242,8 @@
     top: 53vh;
     padding-left: 36px;
   }
-  ::placeholder{
+
+  ::placeholder {
     font-size: 14px;
   }
 
@@ -256,7 +260,7 @@
     position: absolute;
     top: 49.99vh;
     left: 15vw;
-     width: 26vw;
+    width: 26vw;
     font-weight: 600;
     font-size: 15px;
   }
@@ -277,14 +281,14 @@
     position: absolute;
     top: 55.5vh;
     left: 16.5vw;
-    width:21px;
-    height:18px;
+    width: 21px;
+    height: 18px;
   }
 
   #emailImage {
     top: 37.5vh;
     left: 17.5vw;
-    width:20px;
+    width: 20px;
   }
 
   #wrongid {
@@ -297,21 +301,25 @@
     left: 48vw;
     font-weight: 550;
   }
+
   #eye {
-    top:56vh;
-    width:16px;
+    top: 56vh;
+    width: 16px;
   }
+
   #credential {
-    top:78.5vh;
-    left:20vw;
-    width:65vw;
+    top: 78.5vh;
+    left: 20vw;
+    width: 65vw;
   }
 }
-@media (max-width:920px){
-  #heading{
-  display: none;
+
+@media (max-width:920px) {
+  #heading {
+    display: none;
+  }
 }
-}
+
 @media (min-width:380px) and (max-width:950px) {
   .AUTHENTICATION {
     overflow: hidden;
@@ -359,7 +367,7 @@
 
   #heading {
     position: absolute;
-  left: 30vw;
+    left: 30vw;
     width: 50vw;
 
   }
@@ -392,173 +400,214 @@
     top: 64.5vh;
     left: 45.6vw;
     font-weight: 500;
-    left:45.8vw;
+    left: 45.8vw;
     font-size: 18px;
   }
+
   #eye {
-    top:54.7vh;
-    left:81vw;
+    top: 54.7vh;
+    left: 81vw;
   }
+
   #credential {
-    top:75vh;
-    left:22vw;
-    width:65vw;
+    top: 75vh;
+    left: 22vw;
+    width: 65vw;
   }
 }
-@media (min-width:768px ) and (max-width:920px){
+
+@media (min-width:768px) and (max-width:920px) {
   #fgtPwd {
-left:67.5vw;
+    left: 67.5vw;
   }
-  #input-box1{
-left:18.5vw;
-padding-left: 60px;
-font-size:1.4rem;
+
+  #input-box1 {
+    left: 18.5vw;
+    padding-left: 60px;
+    font-size: 1.4rem;
   }
-  #input-box2{
-    left:18.5vw;
+
+  #input-box2 {
+    left: 18.5vw;
     padding-left: 52px;
-    font-size:1.4rem;
+    font-size: 1.4rem;
   }
-  #btn-submit{
-    left:18.5vw;
-    font-size:1.4rem;
+
+  #btn-submit {
+    left: 18.5vw;
+    font-size: 1.4rem;
   }
-  ::placeholder{
-    font-size:1.4rem;
+
+  ::placeholder {
+    font-size: 1.4rem;
   }
-  #eye{
-left:86.5vw;
-top:55vh;
+
+  #eye {
+    left: 86.5vw;
+    top: 55vh;
   }
-  #lockImg{
-left:20.5vw;
+
+  #lockImg {
+    left: 20.5vw;
   }
-  #emailImage{
-    left:21.5vw;
+
+  #emailImage {
+    left: 21.5vw;
   }
-  #user-id{
-    top:32.5vh;
-left:19vw;
-font-size:1.5rem;
+
+  #user-id {
+    top: 32.5vh;
+    left: 19vw;
+    font-size: 1.5rem;
   }
-  #password{
-    left:19vw;
-    font-size:1.5rem;
+
+  #password {
+    left: 19vw;
+    font-size: 1.5rem;
   }
-  #wrongid{
-    left:19vw;
-    font-size:1.3rem;
+
+  #wrongid {
+    left: 19vw;
+    font-size: 1.3rem;
   }
+
   #credential {
-    font-size:1.4rem;
-    left:23vw;
-    top:76vh;
+    font-size: 1.4rem;
+    left: 23vw;
+    top: 76vh;
     line-height: 25px;
   }
-#timerToken {
-    position:absolute;
-    top:20vh;
-    left:40vw;
+
+  #timerToken {
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
     font-size: 100px;
   }
+
   #fgtPwd {
-    left:66.9vw;
-    font-size:1.3rem;
+    left: 66.9vw;
+    font-size: 1.3rem;
     font-weight: 600;
   }
+
   #timerToken {
-    position:absolute;
-    top:20vh;
-    left:40vw;
+    position: absolute;
+    top: 20vh;
+    left: 40vw;
     font-size: 100px;
   }
 }
-@media (min-width:912px) and (max-width:912px){
+
+@media (min-width:912px) and (max-width:912px) {
   #fgtPwd {
-    left:65vw;
+    left: 65vw;
   }
-  #input-box1{
-left:14vw;
-padding-left: 8vw;
-  }
-  #input-box2{
-    left:14vw;
+
+  #input-box1 {
+    left: 14vw;
     padding-left: 8vw;
   }
-  #btn-submit{
-    left:14vw;
+
+  #input-box2 {
+    left: 14vw;
+    padding-left: 8vw;
   }
-  #user-id{
-    left:14vw;
+
+  #btn-submit {
+    left: 14vw;
   }
-  #password{
-    left:14vw;
+
+  #user-id {
+    left: 14vw;
   }
-  #emailImage{
-    left:16.6vw;
+
+  #password {
+    left: 14vw;
   }
-  #lockImg{
-left:16vw;
-top:54.6vh;
+
+  #emailImage {
+    left: 16.6vw;
   }
-  #eye{
-left:82vw;
+
+  #lockImg {
+    left: 16vw;
+    top: 54.6vh;
   }
-  #wrongid{
-left:14vw;
+
+  #eye {
+    left: 82vw;
   }
-  #credential{
-    left:15.5vw;
-    width:70vw;
+
+  #wrongid {
+    left: 14vw;
+  }
+
+  #credential {
+    left: 15.5vw;
+    width: 70vw;
   }
 }
-@media (min-width:280px) and (max-width:280px){
+
+@media (min-width:280px) and (max-width:280px) {
   #fgtPwd {
-    left:57vw;
-    top:69vh;
+    left: 57vw;
+    top: 69vh;
   }
+
   #lockImg {
     top: 55.8vh;
     left: 17vw;
     /* width:20px; */
   }
-  #emailImage{
-    top:37.8vh;
-    left:18.5vw;
+
+  #emailImage {
+    top: 37.8vh;
+    left: 18.5vw;
   }
-  #eye{
-    top:56.2vh;
+
+  #eye {
+    top: 56.2vh;
   }
-  ::placeholder{
+
+  ::placeholder {
     font-size: 0.8rem;
   }
+
   #wrongid {
     font-size: 12px;
   }
+
   #btn-submit {
     top: 74.6vh;
   }
 }
+
 @media (min-width:540px) and (max-width:540px) {
-  #user-id{
-top:32.2vh;
+  #user-id {
+    top: 32.2vh;
   }
-  #password{
-top:48.5vh;
+
+  #password {
+    top: 48.5vh;
   }
-  #emailImage{
-top:37.5vh;
-left:18.2vw;
+
+  #emailImage {
+    top: 37.5vh;
+    left: 18.2vw;
   }
-  #lockImg{
-top:53.8vh;
-left:17.2vw;
+
+  #lockImg {
+    top: 53.8vh;
+    left: 17.2vw;
   }
-  #fgtPwd{
-    left:57vw;
+
+  #fgtPwd {
+    left: 57vw;
   }
+
   #credential {
-    left:19vw;
-    width:68vw;
+    left: 19vw;
+    width: 68vw;
   }
 }

@@ -4,7 +4,7 @@ import { useState , useEffect} from "react";
 import AdmBar from "./admin_bar/AdmBar";
 import "./admUpdEmail.css";
 import * as ReactBootStrap from "react-bootstrap";
-import admUpdateEmail from "../Assests/Images/admUpdateEmail.svg"
+import admUpdateEmail from "../Assests/admUpdateEmail.svg"
 import { Navigate, useNavigate } from "react-router-dom";
 import BaseUrl from "../utils/BaseUrl";
 function AdmUpdateEmail() {

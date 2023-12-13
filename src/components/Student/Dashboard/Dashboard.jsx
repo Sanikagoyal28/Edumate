@@ -2,7 +2,7 @@ import React from 'react'
 
 import './dashboard.css'
 import * as ReactBootStrap from "react-bootstrap";
-import profileimg from '../../Assests/Images/avatar.png'
+import profileimg from '../../Assests/avatar.png'
 // import updateimg from '../Assests/Images/updates-img-removebg-preview.png'
 import Chart from '../../utils/Pie/Pie'
 import { useEffect } from 'react'
@@ -31,7 +31,6 @@ const Dashboard = () => {
     const [gperiod, setGperiod] = useState('')
     const [foperiod, setFoperiod] = useState('')
     const accessToken = sessionStorage.getItem("access token");
-    console.log(accessToken);
     const config = {
         headers: {
             Authorization: `Bearer ${accessToken}`

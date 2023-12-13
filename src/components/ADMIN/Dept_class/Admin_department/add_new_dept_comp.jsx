@@ -6,7 +6,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-  import addStudent from "../../../Assests/Images/addStudent.svg";
+  import addStudent from "../../../Assests/addStudent.svg";
 import BaseUrl from "../../../utils/BaseUrl";
  function AddNewDeptComp (){
     const [deptName,setDeptName] = useState("");

@@ -1,15 +1,12 @@
 import React from 'react'
 import './profile.css'
-import avatar from '../../Assests/Images/avatar.png'
+import avatar from '../../Assests/avatar.png'
 import Navbar from '../../utils/Navbar/Navbar'
 import ProfileInputField from '../../utils/ProfileInputField'
 import ProfileInputDisabled from '../../utils/ProfileInputDiabled'
 import * as ReactBootStrap from "react-bootstrap";
 import { useState } from 'react'
 import { useEffect } from 'react'
-import axios from 'axios'
-import Instance from '../../utils/axiosInterceptors'
-import axiosInstance from '../../utils/axiosInstance'
 import BaseUrl from '../../utils/BaseUrl'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,8 +33,6 @@ const Profile = () => {
 
    function handleEditProfile() {
       setEditAble(true);
-      console.log(editAble);
-
       if (!show) {
          setShow(true);
          document.getElementById('saveButton').style.display = "block";
@@ -70,7 +65,6 @@ const Profile = () => {
    function handleEditPSex(e) {
       setProfileSex(e.target.value);
    }
-   console.log(profileSex)
    function handleEditPBG(e) {
       setProfileBg(e.target.value);
    }
@@ -118,7 +112,6 @@ const Profile = () => {
    useEffect(() => {
       setLoadBool(true)
       BaseUrl.get("student/profiledetails/", config).then((res) => {
-         console.log(res);
          setLoadBool(false)
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
@@ -150,7 +143,6 @@ const Profile = () => {
          document.getElementById('editButton').style.display = "block";
          document.getElementsByClassName("profileField")[0].style.border = "none";
          document.getElementsByClassName("dropdownGender")[0].style.border = "none";
-
       }
       else {
          setShow2(false)
@@ -162,7 +154,7 @@ const Profile = () => {
 
       }
       BaseUrl.get("student/profiledetails/", config).then((res) => {
-        
+
          setProfileName(res.data.name);
          setProfileSex(res.data.sex);
          setProfileBg(res.data.blood_group);
@@ -178,11 +170,9 @@ const Profile = () => {
          setProfileMotherName(res.data.mother_name);
          setProfileFatherName(res.data.father_name);
          setProfileImage(res.data.picture)
-       
+
       }).catch(err => {
-        
       })
-      window.location.reload();
    }
 
 
@@ -207,47 +197,44 @@ const Profile = () => {
       }
       setEditAble(false);
       // if (isCorrect) {
-         BaseUrl.put("student/profiledetails/", {
-            name: profileName,
-            sex: profileSex,
-            blood_group: profileBG,
-            DOB: profileDOB,
-            address: profileAddr,
-            city: profileCity,
-            state: profileState,
-            student_phone: profileMobile,
-            pincode: profilePin,
-            father_name: profileFatherName,
-            mother_name: profileMotherName,
-            father_phone: profileFather,
-            mother_phone: profileMother,
-            email: profileEmail,
-            picture: profileImage
-         }, config).then((res) => {
-            setPostData(res.data);
-            toast.success("Profile edited successfully", {
-               position: "top-center",
-               background: "none"
-            })
-            setProfileImage(res.data.picture)
-            console.log(res);
-            setProfileName(res.data.name);
-            setProfileEmail(res.data.email);
-            setProfileSex(res.data.sex);
-            setProfileBg(res.data.blood_group);
-            setProfileDOB(res.data.DOB);
-            setProfileAddr(res.data.address);
-            setProfileCity(res.data.city);
-            setProfileState(res.data.state);
-            setProfileMobile(res.data.student_phone);
-            setProfilePin(res.data.pincode);
-            setProfileFather(res.data.father_phone);
-            setProfileMother(res.data.mother_phone);
-            setProfileFatherName(res.data.father_name);
-            setProfileMotherName(res.data.mother_name);
+      BaseUrl.put("student/profiledetails/", {
+         name: profileName,
+         sex: profileSex,
+         blood_group: profileBG,
+         DOB: profileDOB,
+         address: profileAddr,
+         city: profileCity,
+         state: profileState,
+         student_phone: profileMobile,
+         pincode: profilePin,
+         father_name: profileFatherName,
+         mother_name: profileMotherName,
+         father_phone: profileFather,
+         mother_phone: profileMother,
+         email: profileEmail,
+         picture: profileImage
+      }, config).then((res) => {
+         setPostData(res.data);
+         toast.success("Profile edited successfully", {
+            position: "top-center",
+            background: "none"
          })
-      // }
-      // window.location.reload();
+         setProfileImage(res.data.picture)
+         setProfileName(res.data.name);
+         setProfileEmail(res.data.email);
+         setProfileSex(res.data.sex);
+         setProfileBg(res.data.blood_group);
+         setProfileDOB(res.data.DOB);
+         setProfileAddr(res.data.address);
+         setProfileCity(res.data.city);
+         setProfileState(res.data.state);
+         setProfileMobile(res.data.student_phone);
+         setProfilePin(res.data.pincode);
+         setProfileFather(res.data.father_phone);
+         setProfileMother(res.data.mother_phone);
+         setProfileFatherName(res.data.father_name);
+         setProfileMotherName(res.data.mother_name);
+      })
    }
    useEffect(() => {
       if (loadBool)
@@ -340,7 +327,7 @@ const Profile = () => {
 
    const isnum = /^\d+$/;
    useEffect(() => {
-      if (isnum.test(profileFather)) {
+      if (isnum.test(profileFather) && profileFather.toString().length == 10) {
          document.getElementById("wrongFNum").style.display = "none";
          setIsCorrect(true)
       }
@@ -351,7 +338,7 @@ const Profile = () => {
    }, [profileFather])
 
    useEffect(() => {
-      if (isnum.test(profileMother)) {
+      if (isnum.test(profileMother) && profileMother.toString().length == 10) {
          document.getElementById("wrongMNum").style.display = "none";
          setIsCorrect(true)
       }
@@ -362,7 +349,7 @@ const Profile = () => {
    }, [profileMother])
 
    useEffect(() => {
-      if (isnum.test(profileMobile)) {
+      if (isnum.test(profileMobile) && profileMobile.toString().length == 10) {
          document.getElementById("wrongNum").style.display = "none";
          setIsCorrect(true)
       }
@@ -392,115 +379,146 @@ const Profile = () => {
          <h1 className="dash">Dashboard : My Profile</h1>
          <div id="background">
             <div id="avatar">
-               <img src={profileImage} id="profileImage" />
+               {profileImage === null || profileImage === '' || profileImage === undefined ? <img src={avatar} id="profileImage" /> : <img src={profileImage} id="profileImage" />}
                <span id='dis-name'>{MainName}</span><br />
                <div className='avatarInfo'>
                   Mon 3 SEPT 2001 <br />
                   B.TECH 2ND YEAR <br />
                </div>
             </div>
-            <div id="heading1">Student Profile</div>
-            <div id="personalinfo">Personal Info</div>
-            <div id="stu-name">Student's Name</div>
-            <div className='space1'>
-               {editAble ? (<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />) :
-                  (<ProfileInputDisabled value={profileName} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongName">Name must contain only alphabetic characters.</p>
-            <div id="sex">Sex</div>
-            <div className='space2'>
-               {editAble ? (<select className="dropdownGender" value={profileSex} onChange={handleEditPSex}>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-               </select>) :
-                  (<select className="dropdownGender" value={profileSex} disabled>
-                     <option value="Male" disabled>Male</option>
-                     <option value="Female" disabled>Female</option>
-                  </select>)}
-            </div>
-            <div id="bl-gr">Blood Group</div>
-            <div className='space3'>
-               {editAble ? (<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />) :
-                  (<ProfileInputDisabled value={profileBG} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongBG">Please enter a valid Blood Group</p>
-            <div id="dob">Date of Birth (MM/DD/YYYY)</div>
-            <div className='space4'>
-               {editAble ? (<ProfileInputField value={profileDOB} class="profileField" type="date" data-date-format="DD MMMM YYYY" onChange={handleEditPDOB} />) :
-                  (<ProfileInputDisabled value={profileDOB} class="profileField" data-date-format="DD MMMM YYYY" type="date" />)}
-            </div>
-            <div id="email">Email</div>
-            <div className='space5'>
-               {editAble ? (<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled />) :
-                  (<input value={profileEmail} class="profileField" type="text" disabled />)}
-            </div>
-            <p id="wrongEmail">Please enter a valid Email address</p>
-            <div id="heading2">Contact Details</div>
-            <div id="address">Address</div>
-            <div className='space6'>
-               {editAble ? (<ProfileInputField value={profileAddr} class="profileField" type="text" onChange={handleEditPAddr} />) :
-                  (<ProfileInputDisabled value={profileAddr} class="profileField" type="text" />)}
-            </div>
-            <div id="city">City</div>
-            <div className='space7'>
-               {editAble ? (<ProfileInputField value={profileCity} class="profileField" type="text" onChange={handleEditPCity} />) :
-                  (<ProfileInputDisabled value={profileCity} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongCity">Please enter a valid City name</p>
-            <div id="state">State</div>
-            <div className='space8'>
-               {editAble ? (<ProfileInputField value={profileState} class="profileField" type="text" onChange={handleEditPState} />) :
-                  (<ProfileInputDisabled value={profileState} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongState">Please enter a valid State name</p>
-            <div id="stu-phone">Student's Mobile No.</div>
-            <div className='space9'>
-               {editAble ? (<ProfileInputField value={profileMobile} class="profileField" type="text" onChange={handleEditPMobile} />) :
-                  (<ProfileInputDisabled value={profileMobile} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongNum">Number must contain only numeric characters.</p>
-            <div id="pin">Pincode</div>
-            <div className='space10'>
-               {editAble ? (<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />) :
-                  (<ProfileInputDisabled value={profilePin} class="profileField" type="text" />)}
-            </div>
-            <div id="heading3">Parents</div>
-            <div id="fat-name">Father's Name</div>
-            <div className='space11'>
-               {editAble ? (<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />) :
-                  (<ProfileInputDisabled value={profileFatherName} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongFName">Name must contain only alphabetic characters.</p>
-            <div id="fat-phone">Father's Mobile No.</div>
-            <div className='space12'>
-               {editAble ? (<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />) :
-                  (<ProfileInputDisabled value={profileFather} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongFNum">Number must contain only numeric characters.</p>
-            <div id="mot-name">Mother's Name</div>
-            <div className='space13'>
-               {editAble ? (<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />) :
-                  (<ProfileInputDisabled value={profileMotherName} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongMName">Name must contain only alphabetic characters.</p>
-            <div id="mot-phone">Mother's Mobile No.</div>
-            <div className='space14'>
-               {editAble ? (<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />) :
-                  (<ProfileInputDisabled value={profileMother} class="profileField" type="text" />)}
-            </div>
-            <p id="wrongMNum">Number must contain only numeric characters.</p>
+            <div id="stuDetails">
+               <p id="heading1">Student Profile</p>
+               <p className="label1">Personal Info</p>
+               <div className="profileInput">
+                  <p className="label2">Student's Name</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileName} class="profileField" type="text" onChange={handleEditPName} />) :
+                        (<ProfileInputDisabled value={profileName} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongName">Name must contain only alphabetic characters.</p>
+               <div className="profileInput">
+                  <p className="label2">Sex</p>
+                  <div className='space'>
+                     {editAble ? (<select className="dropdownGender" value={profileSex} onChange={handleEditPSex}>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                     </select>) :
+                        (<select className="dropdownGender" value={profileSex} disabled>
+                           <option value="Male" disabled>Male</option>
+                           <option value="Female" disabled>Female</option>
+                        </select>)}
+                  </div>
+               </div>
+               <div className="profileInput">
+                  <p className="label2">Blood Group</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileBG} class="profileField" type="text" onChange={handleEditPBG} />) :
+                        (<ProfileInputDisabled value={profileBG} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongBG">Please enter a valid Blood Group</p>
+               <div className="profileInput">
+                  <p className="label2">Date of Birth (MM/DD/YYYY)</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileDOB} class="profileField" type="date" data-date-format="DD MMMM YYYY" onChange={handleEditPDOB} />) :
+                        (<ProfileInputDisabled value={profileDOB} class="profileField" data-date-format="DD MMMM YYYY" type="date" />)}
+                  </div>
+               </div>
+               <div className="profileInput">
+                  <p className="label2">Email</p>
+                  <div className='space'>
+                     {editAble ? (<input value={profileEmail} class="profileField" type="text" onChange={handleEditPEmail} disabled />) :
+                        (<input value={profileEmail} class="profileField" type="text" disabled />)}
+                  </div>
+               </div>
+               <p id="wrongEmail">Please enter a valid Email address</p>
+               <div className='CONTACT'>
+                  <p className="label1">Contact Details</p>
+                  <div className="profileInput">
+                     <p className="label2">Address</p>
+                     <div className='space'>
+                        {editAble ? (<ProfileInputField value={profileAddr} class="profileField" type="text" onChange={handleEditPAddr} />) :
+                           (<ProfileInputDisabled value={profileAddr} class="profileField" type="text" />)}
+                     </div>
+                  </div>
+                  <div className="profileInput">
+                     <p className="label2">City</p>
+                     <div className='space'>
+                        {editAble ? (<ProfileInputField value={profileCity} class="profileField" type="text" onChange={handleEditPCity} />) :
+                           (<ProfileInputDisabled value={profileCity} class="profileField" type="text" />)}
+                     </div>
+                  </div>
+                  <p id="wrongCity">Please enter a valid City name</p>
+                  <div className="profileInput">
+                     <p className="label2">State</p>
+                     <div className='space'>
+                        {editAble ? (<ProfileInputField value={profileState} class="profileField" type="text" onChange={handleEditPState} />) :
+                           (<ProfileInputDisabled value={profileState} class="profileField" type="text" />)}
+                     </div>
+                  </div>
+                  <p id="wrongState">Please enter a valid State name</p>
+                  <div className="profileInput">
+                     <p className="label2">Student's Mobile No.</p>
+                     <div className='space'>
+                        {editAble ? (<ProfileInputField value={profileMobile} class="profileField" type="text" onChange={handleEditPMobile} />) :
+                           (<ProfileInputDisabled value={profileMobile} class="profileField" type="text" />)}
+                     </div>
+                  </div>
+                  <p id="wrongNum">Number must contain only numeric characters.</p>
+                  <div className="profileInput">
+                     <p className="label2">Pincode</p>
+                     <div className='space'>
+                        {editAble ? (<ProfileInputField value={profilePin} class="profileField" type="text" onChange={handleEditPPin} />) :
+                           (<ProfileInputDisabled value={profilePin} class="profileField" type="text" />)}
+                     </div>
+                  </div>
+               </div>
+               <p className="label1">Parents</p>
+               <div className="profileInput">
+                  <p className="label2">Father's Name</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileFatherName} class="profileField" type="text" onChange={handleEditPFatherName} />) :
+                        (<ProfileInputDisabled value={profileFatherName} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongFName">Name must contain only alphabetic characters.</p>
+               <div className="profileInput">
+                  <div className="label2">Father's Mobile No.</div>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileFather} class="profileField" type="text" onChange={handleEditPFather} />) :
+                        (<ProfileInputDisabled value={profileFather} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongFNum">Number must contain only numeric characters.</p>
+               <div className="profileInput">
+                  <p className="label2">Mother's Name</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileMotherName} class="profileField" type="text" onChange={handleEditPMotherName} />) :
+                        (<ProfileInputDisabled value={profileMotherName} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongMName">Name must contain only alphabetic characters.</p>
+               <div className="profileInput">
+                  <p className="label2">Mother's Mobile No.</p>
+                  <div className='space'>
+                     {editAble ? (<ProfileInputField value={profileMother} class="profileField" type="text" onChange={handleEditPMother} />) :
+                        (<ProfileInputDisabled value={profileMother} class="profileField" type="text" />)}
+                  </div>
+               </div>
+               <p id="wrongMNum">Number must contain only numeric characters.</p>
+            </div >
             <button id="editButton" onClick={handleEditProfile}>Edit Profile</button>
             <button id="saveButton" onClick={handleSaveProfile}>Save</button>
             <button id="cancelButton" onClick={handleCancel}>Cancel</button>
-            <div className='CONTACT'>
-            </div>
-            <select className="dropdownGender" onChange={handleEditPSex}>
-               <option value="male">Male</option>
-               <option value="female">Female</option>
-            </select>
+
+            {/* <select className="dropdownGender" onChange={handleEditPSex}> */}
+            {/* <option value="male">Male</option> */}
+            {/* <option value="female">Female</option> */}
+            {/* </select> */}
          </div>
          {loadBool ? (<ReactBootStrap.Spinner animation="border" id="apiloader" />) : null}
-         <ToastContainer />
+         < ToastContainer />
       </>
    )
 }

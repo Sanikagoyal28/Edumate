@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import AdminComponent from "./Admin_department/AdminDptComp1";
 import AdminClComponent from "./Admin_class/adminClComp";
 import "../Dept_class/Admin_department/admin_Dept.css";

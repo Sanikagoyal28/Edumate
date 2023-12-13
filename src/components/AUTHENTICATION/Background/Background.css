@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +7,24 @@
   background-color: #eef1ff;
   /* overflow: hidden; */
 }
-.backgroundMainImg{
-  position:absolute;
-  width:200vw;
-  height:100vh; 
-   background: no-repeat center fixed; 
-   background-size: cover; 
-   overflow: hidden;
+
+::-webkit-scrollbar {
+  display: none;
 }
+
+.backgroundMainImg {
+  position: absolute;
+  width: 200vw;
+  height: 100vh;
+  background: no-repeat center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .AUTHENTICATION div {
   overflow: hidden !important;
 }
+
 .circle1 {
   display: block;
   border-radius: 70%;
@@ -28,6 +36,7 @@
   background-color: #6c63ff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .circle2 {
   display: block;
   border-radius: 80%;
@@ -61,6 +70,7 @@
   background: #ffffff;
   border-radius: 0px 12px 12px 0px;
 }
+
 .edumate {
   position: absolute;
   width: 25vw;
@@ -72,9 +82,10 @@
   font-weight: 600;
   font-size: 33px;
   line-height: 38px;
-  color:white;
+  color: white;
   background: none;
 }
+
 .BgHead {
   position: absolute;
   height: 6.8vh;
@@ -88,6 +99,7 @@
   color: #000000;
   background: none;
 }
+
 #pumpkin {
   position: absolute;
   left: 67vw;
@@ -96,6 +108,7 @@
   height: 26vh;
   background: none;
 }
+
 .authImage {
   z-index: 5;
   position: absolute;
@@ -105,37 +118,47 @@
   top: 26vh;
   background: none;
 }
+
 @media (max-width: 380px) {
-  .AUTHENTICATION{
+  .AUTHENTICATION {
     overflow: hidden;
   }
-  .backgroundMainImg{
-    display:none;
+
+  .backgroundMainImg {
+    display: none;
   }
+
   body {
     background-color: #eef1ff;
   }
+
   .panel1 {
     display: none;
   }
+
   .panel2 {
     display: none;
   }
+
   .circle1 {
     display: none;
   }
+
   .circle2 {
     display: none;
   }
+
   .authImage {
     display: none;
   }
+
   #pumpkin {
     display: none;
   }
+
   .edumate {
-    width:75vw;
-    height:15vh;
+    width: 75vw;
+    height: 15vh;
     left: 21vw;
     top: 13vh;
     font-weight: 600;
@@ -145,35 +168,45 @@
     color: #6c63ff;
   }
 }
+
 @media (min-width:380px) and (max-width:950px) {
-  .AUTHENTICATION{
+  .AUTHENTICATION {
     overflow: hidden;
   }
-  .backgroundMainImg{
-    display:none;
+
+  .backgroundMainImg {
+    display: none;
   }
+
   body {
     background-color: #eef1ff;
   }
+
   .panel1 {
     display: none;
   }
+
   .panel2 {
     display: none;
   }
+
   .circle1 {
     display: none;
   }
+
   .circle2 {
     display: none;
   }
+
   .authImage {
     display: none;
   }
+
   #pumpkin {
     display: none;
   }
 }
+
 @media (min-width:380px) and (max-width:819px) {
   .edumate {
     width: 75vw;
@@ -187,7 +220,8 @@
     color: #6c63ff;
   }
 }
-@media (min-width:768px) and (max-width:920px){
+
+@media (min-width:768px) and (max-width:920px) {
   .edumate {
     width: 75vw;
     height: 15vh;
@@ -200,10 +234,11 @@
     color: #6c63ff;
   }
 }
-@media(max-width:280px){
+
+@media(max-width:280px) {
   .edumate {
-    width:75vw;
-    height:15vh;
+    width: 75vw;
+    height: 15vh;
     left: 14vw;
     top: 13vh;
     font-weight: 600;
@@ -213,15 +248,17 @@
     color: #6c63ff;
   }
 }
+
 @media (min-width:540px) and (max-width:540px) {
   .edumate {
-    left:29vw;
+    left: 29vw;
     font-size: 3rem;
   }
 }
+
 @media (min-width:912x) and (max-width:912px) {
   .edumate {
-    left:32vw;
+    left: 32vw;
     font-size: 4.2rem;
   }
 }

@@ -1,6 +1,7 @@
 .AUTHENTICATION {
   overflow: hidden;
 }
+
 #inputBox {
   box-sizing: border-box;
   font-family: "Montserrat";
@@ -12,9 +13,8 @@
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding-left: 7.5vh;
-background-color: white;
-outline-color: #6c63ff;
-cursor:pointer;
+  background-color: white;
+  outline:0.5px solid #000;
 }
 
 #btnContinue {
@@ -33,6 +33,7 @@ cursor:pointer;
   cursor: pointer;
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 }
+
 #btnContinue:hover {
   background: #7971ff;
 }
@@ -46,10 +47,10 @@ cursor:pointer;
   position: absolute;
   width: 351px;
   height: 34px;
-  left:55.5vw;
+  left: 55.5vw;
   top: 55.5vh;
   /* padding-left:6vh; */
-background: none;
+  background: none;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
@@ -60,6 +61,7 @@ background: none;
   color: #ff0000;
   display: none;
 }
+
 #pwdHead {
   position: absolute;
   width: 26vw;
@@ -74,6 +76,7 @@ background: none;
   letter-spacing: 0.05em;
   background: none;
 }
+
 #emailIcon {
   background: none;
   width: 25px;
@@ -83,9 +86,11 @@ background: none;
   top: 49.7vh;
   left: 56vw;
 }
+
 #bghead {
-  display:none;
+  display: none;
 }
+
 #msg {
   position: absolute;
   width: 22vw;
@@ -100,6 +105,7 @@ background: none;
   color: #ff0000;
   background: none;
 }
+
 #emailValid {
   position: absolute;
   width: 22vw;
@@ -113,66 +119,76 @@ background: none;
   color: #ff0000;
   background: none;
 }
+
 @media (max-width:380px) {
   .AUTHENTICATION {
     overflow: hidden;
   }
+
   #pwdHead {
-width: 77vw;
-left: 14vw;
-top: 36.7vh;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 0.85rem;
-line-height: 20px;
-letter-spacing: 0.05em;
-color: #000000;
+    width: 77vw;
+    left: 14vw;
+    top: 36.7vh;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.85rem;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #000000;
   }
+
   #inputBox {
     box-sizing: border-box;
     width: 73vw;
     height: 54px;
-  left:13.5vw;
+    left: 13.5vw;
     top: 43vh;
-    
+
   }
+
   #btnContinue {
     width: 73vw;
     height: 54px;
-    top:58vh;
-    left:13.5vw;
+    top: 58vh;
+    left: 13.5vw;
   }
+
   #emailIcon {
-    top:45.7vh;
-    left:17vw;
+    top: 45.7vh;
+    left: 17vw;
   }
-  #Forgot{
-    top:25vh;
-    font-size:26px;
-    left:37vw;
+
+  #Forgot {
+    top: 25vh;
+    font-size: 26px;
+    left: 37vw;
     line-height: 30px;
-    width:50vw;
-    height:20vh;
-    color:black;
+    width: 50vw;
+    height: 20vh;
+    color: black;
     font-family: "Montserrat";
   }
+
   #wrongemail {
-    top:51vh;
-    left:13.5vw;
-    width:57vw;
-    background:none;
+    top: 51vh;
+    left: 13.5vw;
+    width: 57vw;
+    background: none;
   }
-  #emailValid{
-    width:60vw;
-    left:21vw;
-    top:67vh;
+
+  #emailValid {
+    width: 60vw;
+    left: 21vw;
+    top: 67vh;
   }
 }
-@media (min-width:380px) and (max-width:950px){
-  .AUTHENTICATION  {
+
+@media (min-width:380px) and (max-width:950px) {
+  .AUTHENTICATION {
     overflow: hidden;
   }
+
   #inputBox {
     position: absolute;
     width: 73vw;
@@ -180,14 +196,16 @@ color: #000000;
     left: 14vw;
     top: 43vh;
   }
+
   #pwdHead {
     position: absolute;
     top: 37.5vh;
     left: 15vw;
-   width: 70vw;
+    width: 70vw;
     font-weight: 600;
     font-size: 0.9rem;
   }
+
   #btnContinue {
     position: absolute;
     width: 73vw;
@@ -195,174 +213,206 @@ color: #000000;
     left: 14vw;
     top: 56vh;
   }
+
   #emailIcon {
     top: 45vh;
     left: 18vw;
   }
+
   #wrongemail {
     top: 49.5vh;
     left: 14vw;
-    width:60vw;
+    width: 60vw;
     font-size: 0.9rem;
     background: none;
   }
+
   #Forgot {
-    display:block;
-    width:65vw;
-    height:10vh;
-    left:25vw;
-    top:23vh;
+    display: block;
+    width: 65vw;
+    height: 10vh;
+    left: 25vw;
+    top: 23vh;
   }
-  #emailValid{
-    width:60vw;
-    top:63vh;
-    left:21vw;
+
+  #emailValid {
+    width: 60vw;
+    top: 63vh;
+    left: 21vw;
     font-size: 1rem;
   }
 }
+
 @media (min-width:768px) and (max-width:920px) {
-  #Forgot{
-    top:25vh;
-left:25vw;
-font-size: 2.5rem;
+  #Forgot {
+    top: 25vh;
+    left: 25vw;
+    font-size: 2.5rem;
   }
-  #wrongemail{
-font-size: 18px;
-left:21.5vw;
-top:49.4vh;
+
+  #wrongemail {
+    font-size: 18px;
+    left: 21.5vw;
+    top: 49.4vh;
   }
-  #btnContinue{
-left:21.5vw;
-width:63vw;
+
+  #btnContinue {
+    left: 21.5vw;
+    width: 63vw;
   }
-  #emailIcon{
-left:23vw;
-top:45.1vh;
+
+  #emailIcon {
+    left: 23vw;
+    top: 45.1vh;
   }
-  #pwdHead{
-font-size: 1.3rem;
-top:39.1vh;
-left:21.5vw;
+
+  #pwdHead {
+    font-size: 1.3rem;
+    top: 39.1vh;
+    left: 21.5vw;
   }
-  #inputBox{
-left:21.5vw;
-top:43.5vh;
-padding-left: 58px;
-font-size: 19px;
-width:63vw;
+
+  #inputBox {
+    left: 21.5vw;
+    top: 43.5vh;
+    padding-left: 58px;
+    font-size: 19px;
+    width: 63vw;
   }
-  #emailValid{
-    left:32.5vw;
-    top:62vh;
+
+  #emailValid {
+    left: 32.5vw;
+    top: 62vh;
     font-size: 1.4rem;
   }
 }
+
 @media (min-width:540px) and (max-width:540px) {
-  #wrongemail{
-    top:53.5vh;
+  #wrongemail {
+    top: 53.5vh;
   }
-  #btnContinue{
-    top:62vh;
+
+  #btnContinue {
+    top: 62vh;
   }
-  #pwdHead{
-    top:40vh;
-    left:14.4vw;
+
+  #pwdHead {
+    top: 40vh;
+    left: 14.4vw;
   }
-  #emailIcon{
-    left:17.1vw;
-    top:48vh;
+
+  #emailIcon {
+    left: 17.1vw;
+    top: 48vh;
   }
-  #inputBox{
-    top:45.5vh;
+
+  #inputBox {
+    top: 45.5vh;
   }
-  #Forgot{
+
+  #Forgot {
     font-size: 28px;
     line-height: 34px;
-    width:40vw;
-    height:12vh;
-    left:34vw;
-    top:25vh;
+    width: 40vw;
+    height: 12vh;
+    left: 34vw;
+    top: 25vh;
   }
-  #emailValid{
-    top:70vh;
-    left:28vw;
+
+  #emailValid {
+    top: 70vh;
+    left: 28vw;
   }
 }
-@media (min-width:280px) and (max-width:280px){
-  #wrongemail{
-left:15vw;
-font-size: 0.8rem;
-width:90vw;
-top:50vh;
+
+@media (min-width:280px) and (max-width:280px) {
+  #wrongemail {
+    left: 15vw;
+    font-size: 0.8rem;
+    width: 90vw;
+    top: 50vh;
   }
-  #btnContinue{
-left:15vw;
-height:7vh;
+
+  #btnContinue {
+    left: 15vw;
+    height: 7vh;
   }
-  #inputBox{
-    left:15vw;
-    height:7vh;
-padding-left: 30px;
+
+  #inputBox {
+    left: 15vw;
+    height: 7vh;
+    padding-left: 30px;
   }
-  #pwdHead{
-font-size: 0.75rem;
-left:16vw;
-top:38vh;
-line-height: 15px;
+
+  #pwdHead {
+    font-size: 0.75rem;
+    left: 16vw;
+    top: 38vh;
+    line-height: 15px;
   }
-  #emailIcon{
-width:17px;
-left:18.5vw;
-top:45.1vh;
+
+  #emailIcon {
+    width: 17px;
+    left: 18.5vw;
+    top: 45.1vh;
   }
-  #Forgot{
-    left:39vw;
+
+  #Forgot {
+    left: 39vw;
     font-size: 20px;
-    width:60vw;
-    height:10vh;
+    width: 60vw;
+    height: 10vh;
     line-height: 20px;
   }
-  #emailValid{
-    left:25vw;
-    top:65.5vh;
+
+  #emailValid {
+    left: 25vw;
+    top: 65.5vh;
     font-size: 0.9rem;
   }
 }
+
 @media (min-width:912px) and (max-width:912px) {
-  #wrongemail{
-left:20.5vw;
-font-size: 1.3rem;
-top:50vh;
+  #wrongemail {
+    left: 20.5vw;
+    font-size: 1.3rem;
+    top: 50vh;
   }
-  #emailValid{
-font-size: 1.6rem;
-top:63vh;
-left:31.5vw;
+
+  #emailValid {
+    font-size: 1.6rem;
+    top: 63vh;
+    left: 31.5vw;
   }
-  #pwdHead{
-    left:20.5vw;
-    top:39vh;
+
+  #pwdHead {
+    left: 20.5vw;
+    top: 39vh;
     line-height: 25px;
     font-size: 1.6rem;
-    width:65vw;
+    width: 65vw;
   }
-  #emailIcon{
-width:25px;
-left:22.7vw;
-top:45.7vh;
+
+  #emailIcon {
+    width: 25px;
+    left: 22.7vw;
+    top: 45.7vh;
   }
-  #btnContinue{
-    left:20.5vw;
-    height:6vh;
+
+  #btnContinue {
+    left: 20.5vw;
+    height: 6vh;
     font-size: 1.3rem;
   }
-  #inputBox{
-    left:20.5vw;
-    height:6vh;
+
+  #inputBox {
+    left: 20.5vw;
+    height: 6vh;
     font-size: 1.4rem;
   }
+
   #Forgot {
     font-size: 3rem;
-    left:22.5vw;
+    left: 22.5vw;
   }
 }

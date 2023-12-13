@@ -1,99 +1,90 @@
 import React, { useState, useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Background from "../Background/Background";
-import EmailImg from "./emailImg";
+import emailImg from "./email.svg";
 import "./FgtEmail.css";
-import EmailIcon from "./emailIcon";
-import axios from "axios";
+import emailIcon from "./emailIcon.svg";
 import BaseUrl from "../../utils/BaseUrl";
+
 function FgtEmail() {
   const [email, setEmail] = useState("");
   function handleemail(e) {
     setEmail(e.target.value);
   }
   const rightemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const[ckEmail,setCkEmail] = useState(false);
-  useEffect(()=> {
+  const [ckEmail, setCkEmail] = useState(false);
+  useEffect(() => {
     if (rightemail.test(email)) {
       document.getElementById("wrongemail").style.display = "none";
-      console.log("true");
       setCkEmail(true);
     } else if (email) {
       document.getElementById("wrongemail").style.display = "block";
+      setCkEmail(false)
     }
-  },[email]);
-const [emValid,setEmValid] = useState("");
-const [loadBool,setLoadBool] = useState(false);
-const [navigateOtp,setNavigateOtp] = useState(false);
-const navigate = useNavigate();
-function postemail() {
+  }, [email]);
+  const [loadBool, setLoadBool] = useState(false);
+  const [navigateOtp, setNavigateOtp] = useState(false);
+  const navigate = useNavigate();
 
-  console.log("ahgfj");
-  if(ckEmail){
-    setLoadBool(true);
-BaseUrl.post("sendotp/", {email})
-    .then((res) => {
-      toast.success("OTP sent successfully",{
-        position: "top-center",
-    background:"none"
-      })
-      console.log(res.data);
-      navigate("/otp")
-      localStorage.setItem("email", email);
-      setNavigateOtp(true);
-      sessionStorage.setItem("NavigateOtp",navigateOtp)
-      setLoadBool(false);
-      // {value2?<Navigate to="/otp" />:null}
-      navigate("/otp")
-    })
-    
-    .catch((err) => {
-      toast.error(err.response.data.msg+" "+email,{
-        position: "top-center",
-    background:"none"
-      })
-      console.log(err);
-      setLoadBool(false);
-    })
-}
-else
-{
-  document.getElementById("wrongemail").style.display = "block";
-}
-}
-useEffect(()=>{
-  if(loadBool)
-  document.body.style.opacity="0.5"
-  else
-  document.body.style.opacity="1"
-},[loadBool])
+  function postemail(e) {
+    e.preventDefault();
+    if (ckEmail) {
+      setLoadBool(true);
+      BaseUrl.post("sendotp/", { email })
+        .then((res) => {
+          toast.success("OTP sent successfully", {
+            position: "top-right",
+            background: "none"
+          })
+          navigate("/otp")
+          localStorage.setItem("email", email);
+          setNavigateOtp(true);
+          sessionStorage.setItem("NavigateOtp", navigateOtp)
+          setLoadBool(false);
+        })
+
+        .catch((err) => {
+          toast.error(err.response.data.msg + " " + email, {
+            position: "top-right",
+            background: "none"
+          })
+          setLoadBool(false);
+        })
+    }
+  }
+  useEffect(() => {
+    if (loadBool)
+      document.body.style.opacity = "0.5"
+    else
+      document.body.style.opacity = "1"
+  }, [loadBool])
 
   return (
     <div className="AUTHENTICATION">
       <Background />
       <h1 className="BgHead" id="Forgot">Forgot your Password ?</h1>
       <h1 id="bghead" >Forgot Password ?</h1>
-      <p id="pwdHead">We’ll send you a One Time Password on this email.</p>
-      <input
-        type="text"
-        id="inputBox"
-        placeholder="Enter your email"
-        value={email}
-        onChange={handleemail}
-      />
-      <EmailIcon />
-      <br />
-      <span id="wrongemail">Please enter a valid email id</span>
-      <button id="resend-otp"></button>
-      <button id="btnContinue" onClick={postemail}>
-          CONTINUE
-        </button>
-        <span id="emailValid">{emValid}</span>
-      <EmailImg />
-      {loadBool? (<ReactBootStrap.Spinner animation="border" id="apiloader"/>) :null}
+      <form onSubmit={postemail}>
+        <p id="pwdHead">We’ll send you a One Time Password on this email.</p>
+        <input
+          type="text"
+          id="inputBox"
+          placeholder="Enter your email"
+          value={email}
+          onChange={handleemail}
+          required
+        />
+        <img src={emailIcon} id="emailIcon" />
+        <br />
+        <span id="wrongemail">Please enter a valid email id</span>
+        <button id="resend-otp"></button>
+        <button id="btnContinue" type="submit">CONTINUE</button>
+      </form>
+      <img src={emailImg} className="authImage" />
+      {loadBool ? (<ReactBootStrap.Spinner animation="border" id="apiloader" />) : null}
       <ToastContainer />
     </div>
   );

@@ -1,10 +1,9 @@
-import axios from 'axios'
 import React from 'react'
 import { useState ,useEffect } from 'react'
 import AdmBar from '../admin_bar/AdmBar'
 import * as ReactBootStrap from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
-import addStudent from "../../Assests/Images/addStudent.svg";
+import addStudent from "../../Assests/addStudent.svg";
   import 'react-toastify/dist/ReactToastify.css';
 import './add_fac.css'
 import BaseUrl from '../../utils/BaseUrl';

@@ -6,7 +6,7 @@ import "./adminAddClass.css";
 import AdmBar from "../../admin_bar/AdmBar";
 import { ToastContainer ,toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import addStudent from "../../../Assests/Images/addStudent.svg";
+import addStudent from "../../../Assests/addStudent.svg";
 import * as ReactBootStrap from "react-bootstrap";
 import BaseUrl from "../../../utils/BaseUrl";
  function EditClassComp (){
